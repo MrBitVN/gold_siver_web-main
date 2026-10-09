@@ -1,0 +1,294 @@
+/* TradeTable.css */
+
+/* 1. Định nghĩa biến màu (Scope riêng cho component này) */
+.slv-dashboard-scope {
+    --slv-bg-main: #1E293B;
+    /* Nền chính (Slate 900) */
+    --slv-bg-card: #273548;
+    /* Nền Card sáng hơn nền chính một chút */
+    --slv-text-primary: #F8FAFC;
+    /* Chữ trắng sáng (Slate 50) */
+    --slv-text-secondary: #94A3B8;
+    /* Chữ xám nhạt (Slate 400) */
+    --slv-border: #334155;
+    /* Viền xám tối (Slate 700) */
+    --slv-hover: #334155;
+    /* Màu nền khi hover */
+
+    /* Màu trạng thái */
+    --slv-success-text: #34D399;
+    /* Xanh lá sáng */
+    --slv-success-bg: rgba(16, 185, 129, 0.2);
+    --slv-danger-text: #F87171;
+    /* Đỏ sáng */
+    --slv-danger-bg: rgba(239, 68, 68, 0.2);
+    --slv-blue-text: #60A5FA;
+    /* Xanh dương sáng */
+    --slv-blue-bg: rgba(59, 130, 246, 0.2);
+}
+
+/* 2. Layout Container */
+.slv-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--slv-bg-main);
+    color: var(--slv-text-primary);
+    min-height: 100vh;
+    padding: 5px;
+    box-sizing: border-box;
+    /* Đảm bảo padding không làm vỡ layout */
+}
+
+.slv-wrapper {
+    /* max-width: 1280px; */
+    margin: 0 auto;
+}
+
+/* 3. Header */
+.slv-header {
+    background-color: var(--slv-bg-card);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--slv-border);
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slv-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--slv-text-primary);
+    font-weight: 700;
+}
+
+.slv-header p {
+    margin: 6px 0 0;
+    color: var(--slv-text-secondary);
+    font-size: 14px;
+}
+
+/* Badge Live nhấp nháy */
+.slv-live-badge {
+    background-color: var(--slv-blue-bg);
+    color: var(--slv-blue-text);
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    animation: slv-pulse 2s infinite;
+    white-space: nowrap;
+}
+
+@keyframes slv-pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 4. Grid System (Charts) */
+.slv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Chia đôi màn hình */
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+/* Responsive: Mobile xuống dòng */
+@media (max-width: 900px) {
+    .slv-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slv-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+/* 5. Card Component */
+.slv-card,
+.slv-table-container {
+    background-color: var(--slv-bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--slv-border);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.slv-card {
+    padding: 24px;
+}
+
+.slv-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--slv-text-primary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Thanh màu chỉ thị bên cạnh tiêu đề */
+.slv-indicator {
+    width: 4px;
+    height: 20px;
+    border-radius: 2px;
+    margin-right: 12px;
+    display: inline-block;
+}
+
+.slv-indicator.blue {
+    background-color: #60A5FA;
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+.slv-indicator.orange {
+    background-color: #FB923C;
+    box-shadow: 0 0 10px rgba(251, 146, 60, 0.5);
+}
+
+.slv-indicator.purple {
+    background-color: #A78BFA;
+    box-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+.slv-chart-box {
+    height: 320px;
+    width: 100%;
+    position: relative;
+    /* Để chartjs scale đúng trong flex/grid */
+}
+
+/* 6. Table Styles */
+.slv-table-container {
+    overflow: hidden;
+    /* giữ bo góc */
+}
+
+.slv-table-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--slv-border);
+}
+
+.slv-scroll-area {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.slv-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.slv-table th {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Header tối hơn nền card */
+    color: var(--slv-text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    padding: 5px;
+}
+
+.slv-table td {
+    border-bottom: 1px solid var(--slv-border);
+    color: var(--slv-text-primary);
+}
+
+.slv-table tr:last-child td {
+    border-bottom: none;
+}
+
+.slv-table tr:hover td {
+    background-color: var(--slv-hover);
+}
+
+/* 7. Tiện ích (Utilities) & Typography */
+.slv-left {
+    text-align: left;
+
+}
+
+.slv-center {
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.slv-mono {
+    font-family: 'SF Mono', 'Roboto Mono', Consolas, monospace;
+    letter-spacing: -0.5px;
+}
+
+.slv-sub-text {
+    font-size: 11px;
+    color: var(--slv-text-secondary);
+    display: block;
+    margin-top: 4px;
+}
+
+/* 8. Badges & Colors */
+.slv-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    display: inline-block;
+}
+
+.slv-badge-call {
+    background-color: var(--slv-success-bg);
+    color: var(--slv-success-text);
+    border-color: rgba(52, 211, 153, 0.2);
+}
+
+.slv-badge-put {
+    background-color: var(--slv-danger-bg);
+    color: var(--slv-danger-text);
+    border-color: rgba(248, 113, 113, 0.2);
+}
+
+.slv-text-green {
+    color: var(--slv-success-text);
+}
+
+.slv-text-red {
+    color: var(--slv-danger-text);
+}
+
+/* 9. Loading & Error States */
+.slv-loading,
+.slv-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--slv-bg-main);
+    color: var(--slv-text-secondary);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.slv-error {
+    color: var(--slv-danger-text);
+    padding: 20px;
+    text-align: center;
+}

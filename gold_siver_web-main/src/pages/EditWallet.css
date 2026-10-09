@@ -1,0 +1,106 @@
+.gold-page {
+  min-height: 100vh;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.gold-card {
+  width: 100%;
+  max-width: 520px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 14px;
+  padding: 28px;
+  border: 2px solid #ffd700;
+}
+
+.gold-title {
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 12px;
+}
+
+.gold-info {
+  display: flex;
+  justify-content: space-between;
+  color: #e6c200;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.gold-form {
+  display: grid;
+  gap: 14px;
+}
+
+
+.gold-field label {
+  color: #ffdf6c;
+  font-size: 15px;
+}
+
+.gold-field input,
+.gold-field select {
+  width: 100%;
+  padding: 10px;
+  background: #120f00;
+  border: 1px solid #bfa000;
+  border-radius: 6px;
+  color: #ffd700;
+}
+
+.gold-field input:disabled {
+  opacity: 0.6;
+}
+
+.gold-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.gold-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.gold-actions button:first-child {
+  background: #3a2e00;
+  color: #ffd700;
+}
+
+.gold-actions button:last-child {
+  background: linear-gradient(135deg, #ffd700, #bfa000);
+  color: #2b2100;
+}
+
+.gold-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.gold-error {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.15);
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.gold-success {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.15);
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.gold-warning {
+  color: lightcoral;
+  padding: 8px;
+  border-radius: 6px;
+}

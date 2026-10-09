@@ -1,0 +1,45 @@
+const notificationList = [
+    { id: 1, title: "SLV ", path: "/etf/SLV" },
+    { id: 2, title: "Sàn MCX FOMO ", path: "/mcx-fomo" },
+    { id: 3, title: "Dự báo Bạc", path: "/du-doan-30-ngay" },
+    { id: 4, title: "ZSL ", path: "/etf/ZSL" },
+    { id: 5, title: "DXY", path: "/dxy-chart" },
+    { id: 6, title: "GLD", path: "/etf/GLD" },
+    { id: 7, title: "PSLV", path: "/etf/PSLV" },
+    { id: 8, title: "GLDM", path: "/etf/GLDM" },
+    { id: 9, title: "khai thác mỏ", path: "/spdr-shares" },
+    // ETF Nhật
+    { id: 10, title: "1542.T", path: "/etf/1542.T" },
+    { id: 11, title: "1540.T", path: "/etf/1540.T" },
+    // ETF Trung Quốc
+    { id: 12, title: "161226.SZ", path: "/etf/161226.SZ" },
+    { id: 13, title: "518880.SS", path: "/etf/518880.SS" },
+    { id: 14, title: "159937.SZ", path: "/etf/159937.SZ" },
+    { id: 15, title: "159934.SZ", path: "/etf/159934.SZ" },
+    { id: 16, title: "518800.SS", path: "/etf/518800.SS" },
+    // ETF Khác
+    { id: 17, title: "SILJ", path: "/etf/SILJ" },
+    { id: 18, title: "PHYS", path: "/etf/PHYS" },
+    { id: 19, title: "GOLDBEES.NS", path: "/etf/GOLDBEES.NS" },
+    { id: 20, title: "SETFGOLD.NS", path: "/etf/SETFGOLD.NS" },
+    { id: 21, title: "SILVERBEES.NS", path: "/etf/SILVERBEES.NS" },
+    { id: 22, title: "PSVR.L", path: "/etf/PSVR.L" },
+    { id: 23, title: "PHSP.L", path: "/etf/PHSP.L" },
+    { id: 24, title: "XAD2.MI", path: "/etf/XAD2.MI" },
+    { id: 25, title: "SGLE.MI", path: "/etf/SGLE.MI" },
+    // Stock Indices
+    { id: 26, title: "SPY", path: "/etf/SPY" },
+    { id: 27, title: "VNINDEX", path: "/etf/VNINDEX.VN" },
+    { id: 28, title: "N225", path: "/etf/N225" },
+    { id: 29, title: "KS11", path: "/etf/KS11" },
+    { id: 30, title: "000001.SS", path: "/etf/000001.SS" },
+    { id: 31, title: "STOXX50E", path: "/etf/STOXX50E" },
+    { id: 32, title: "TWII", path: "/etf/TWII" },
+    { id: 33, title: "NSEI", path: "/etf/NSEI" },
+    { id: 34, title: "STI", path: "/etf/STI" },
+    { id: 35, title: "JKSE", path: "/etf/JKSE" },
+    { id: 36, title: "TASE.TA", path: "/etf/TASE.TA" },
+    { id: 37, title: "XDB", path: "/etf/XDB" },
+];
+
+export default notificationList;

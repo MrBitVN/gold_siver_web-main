@@ -1,0 +1,532 @@
+/* ====== Container tổng ====== */
+.etf-detail {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #e5e7eb;
+    /* text chính */
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #d8bc08;
+    margin-top: 20px;
+}
+
+/* ====== Tiêu đề ETF ====== */
+.etf-detail h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #d8bc08;
+}
+
+.etf-detail>p {
+    color: #9ca3af;
+    margin-bottom: 24px;
+}
+
+/* ====== Section title ====== */
+.etf-detail h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    border-left: 4px solid #38bdf8;
+    /* xanh tài chính */
+    padding-left: 10px;
+    color: #f3f4f6;
+}
+
+/* ====== Mô tả ====== */
+.etf-detail .description p {
+    margin-bottom: 10px;
+    color: #d1d5db;
+}
+
+/* ====== Bảng Basics ====== */
+.basics-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.basics-table tr {
+    border-bottom: 1px solid #374151;
+}
+
+.basics-table tr:last-child {
+    border-bottom: none;
+}
+
+.basics-table td {
+    padding: 12px 4px;
+    vertical-align: top;
+}
+
+/* Cột label */
+.basics-table .label {
+    width: 38%;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+/* Cột value */
+.basics-table .value {
+    color: #f9fafb;
+    font-weight: 500;
+}
+
+/* ====== Hover nhẹ cho UX ====== */
+.basics-table tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* ====== SECTION ====== */
+.holdings-section {
+    color: #e5e7eb;
+    padding: 24px 0;
+}
+
+.section-title-performance {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    color: #9ca3af;
+    margin-bottom: 24px;
+}
+
+/* ====== GRID ====== */
+.holdings-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+}
+
+/* ====== TITLES ====== */
+.holdings-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #f9fafb;
+}
+
+/* ====== SUMMARY ====== */
+.summary-box {
+    background: rgba(59, 130, 246, 0.08);
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.summary-box span {
+    display: block;
+}
+
+.summary-value {
+    font-weight: 600;
+    margin: 6px 0;
+}
+
+/* ====== ROW ====== */
+.row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.row-name {
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+.row-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: #f9fafb;
+}
+
+/* ====== PROGRESS BAR ====== */
+.progress-bar {
+    grid-column: 1 / -1;
+    height: 10px;
+    background: #1f2937;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #2563eb;
+    border-radius: 999px;
+}
+
+/* ====== RIGHT COLUMN ====== */
+.holdings-right .block {
+    margin-bottom: 24px;
+}
+
+/* ====== FOOTER ====== */
+.asof {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #9ca3af;
+    text-align: right;
+}
+
+/* ===== SECTION ===== */
+.offers-section {
+    color: #e5e7eb;
+    background: transparent;
+    /* dùng nền chung của layout */
+}
+
+/* ===== TITLE ===== */
+.offers-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.offers-desc {
+    font-size: 14px;
+    color: #9ca3af;
+    margin-bottom: 16px;
+}
+
+/* ===== FILTER ===== */
+.offers-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+.offers-filter select {
+    background: #020617;
+    color: #f9fafb;
+    border: 1px solid #334155;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+/* ===== TABLE ===== */
+.offers-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.offers-table th {
+    text-align: left;
+    padding: 12px 8px;
+    border-bottom: 2px solid #334155;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.offers-table td {
+    padding: 14px 8px;
+    border-bottom: 1px solid #334155;
+    color: #e5e7eb;
+}
+
+/* ===== PROVIDER ===== */
+.provider {
+    font-weight: 600;
+    color: #f9fafb;
+}
+
+/* ===== STARS ===== */
+.stars {
+    color: #f97316;
+    /* cam giống JustETF */
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* ===== NOTE ===== */
+.note {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ===== BUTTON ===== */
+.offer-btn {
+    background: #f97316;
+    color: #020617;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.offer-btn:hover {
+    background: #fb923c;
+}
+
+/* ===== ROW HOVER ===== */
+.offers-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .offers-table thead {
+        display: none;
+    }
+
+    .offers-table tr {
+        display: block;
+        margin-bottom: 16px;
+        border-bottom: 1px solid #334155;
+        padding-bottom: 12px;
+    }
+
+    .offers-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        border: none;
+    }
+
+    .offers-table td::before {
+        content: attr(data-label);
+        color: #9ca3af;
+        font-weight: 500;
+    }
+}
+
+.performance-wrapper {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 28px;
+    border-radius: 12px;
+    color: #e5e7eb;
+}
+
+/* ---------- TITLES ---------- */
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 6px;
+}
+
+/* ---------- LEFT TABLE ---------- */
+.performance-table {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.perf-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #1f2937;
+}
+
+.perf-label {
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+.perf-value {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.perf-value.positive {
+    color: #22c55e;
+}
+
+.perf-value.negative {
+    color: #ef4444;
+}
+
+.perf-value.neutral {
+    color: #9ca3af;
+}
+
+/* ---------- HEATMAP ---------- */
+.heatmap {
+    font-size: 12px;
+}
+
+.heatmap-header,
+.heatmap-row {
+    display: grid;
+    grid-template-columns: 50px repeat(12, 1fr);
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.heatmap-header span {
+    text-align: center;
+    color: #9ca3af;
+}
+
+.heatmap-year {
+    text-align: right;
+    padding-right: 6px;
+    color: #9ca3af;
+}
+
+/* ---------- HEAT CELLS ---------- */
+.heatmap-cell {
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* positive */
+.heat-light-positive {
+    background: #4ade80;
+    color: #022c22;
+}
+
+.heat-positive {
+    background: #22c55e;
+}
+
+.heat-very-positive {
+    background: #15803d;
+}
+
+/* neutral */
+.heat-neutral {
+    background: #374151;
+}
+
+/* negative */
+.heat-light-negative {
+    background: #fca5a5;
+    color: #450a0a;
+}
+
+.heat-negative {
+    background: #ef4444;
+}
+
+.heat-very-negative {
+    background: #991b1b;
+}
+
+.risk-wrapper {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 28px;
+    margin-top: 20px;
+    color: #e5e7eb;
+}
+
+/* ---------- TITLES ---------- */
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 6px;
+    
+}
+
+/* ---------- LEFT ---------- */
+.risk-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #1f2937;
+    font-size: 14px;
+}
+
+.risk-row span:last-child {
+    font-weight: 600;
+}
+
+.negative {
+    color: #ef4444;
+}
+
+.neutral {
+    color: #9ca3af;
+}
+
+/* ---------- CHART ---------- */
+.volatility-chart {
+    position: relative;
+    border-radius: 8px;
+    padding: 16px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+img {
+    border-radius: 10px;
+}
+p{
+    text-indent: 1.5em;
+}
+
+.chart-point {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #3b82f6;
+    border-radius: 50%;
+}
+
+/* axis */
+.chart-axis.right {
+    position: absolute;
+    right: 8px;
+    top: 16px;
+    bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+    .holdings-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 640px) {
+    .basics-table td {
+        display: block;
+        width: 100%;
+        padding: 6px 0;
+    }
+
+    .basics-table .label {
+        font-size: 13px;
+    }
+
+    .basics-table .value {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}

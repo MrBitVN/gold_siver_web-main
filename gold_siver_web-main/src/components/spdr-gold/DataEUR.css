@@ -1,0 +1,72 @@
+/* Container tổng quản lý hiển thị */
+.shark-v3-main-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- CHẾ ĐỘ TRANG CHART: XẾP DỌC (GRID) --- */
+.shark-v3-main-container.force-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    gap: 15px !important;
+    padding: 20px !important;
+    white-space: normal !important; /* Cho phép text xuống dòng */
+    overflow: visible !important;
+}
+
+/* --- CHẾ ĐỘ TRANG CHỦ: CHẠY NGANG (TICKER) --- */
+.shark-v3-main-container.force-ticker {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 30px !important;
+    white-space: nowrap !important; /* Cấm xuống dòng để Marquee hoạt động */
+}
+
+/* Style cho từng ô ETF */
+.shark-v3-card {
+    transition: all 0.3s ease;
+}
+
+/* Khi ở chế độ Dọc (Trang Chart) */
+.shark-v3-card.mode-vertical {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mode-vertical .shark-v3-data {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 8px;
+}
+
+/* Khi ở chế độ Ngang (Ticker) */
+.shark-v3-card.mode-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.mode-horizontal .shark-v3-data {
+    display: flex;
+    gap: 8px;
+}
+
+/* Màu sắc và font */
+.shark-v3-name { font-weight: bold; font-size: 13px; }
+.shark-v3-price { font-family: monospace; color: #fff; font-size: 14px; }
+.shark-v3-pct { font-weight: bold; font-size: 12px; }
+.pos { color: #00ff88; }
+.neg { color: #ff4444; }
+
+/* Hiệu ứng Flash */
+.shark-v3-up { background-color: rgba(0, 255, 136, 0.2) !important; }
+.shark-v3-down { background-color: rgba(255, 68, 68, 0.2) !important; }

@@ -1,0 +1,124 @@
+/* Exchange Rate Chart - Dark Theme */
+.exchange-rate-chart-card {
+  background: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exchange-rate-chart-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(250, 204, 21, 0.2);
+  border-color: var(--accent-yellow);
+}
+
+.chart-header {
+  margin-bottom: 1rem;
+}
+
+.chart-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent-yellow);
+}
+
+.chart-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.currency-select {
+  padding: 0.6rem 1rem;
+  background: var(--background-dark);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.currency-select:hover {
+  border-color: var(--accent-yellow);
+}
+
+.currency-select:focus {
+  outline: none;
+  border-color: var(--accent-yellow);
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.1);
+}
+
+.time-range-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.time-range-btn {
+  padding: 0.5rem 1rem;
+  background: var(--background-dark);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.time-range-btn:hover {
+  background: rgba(250, 204, 21, 0.1);
+  border-color: var(--accent-yellow);
+  color: var(--accent-yellow);
+}
+
+.time-range-btn.active {
+  background: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  color: var(--background-dark);
+  font-weight: 700;
+}
+
+.chart-container {
+  height: 400px;
+  position: relative;
+}
+
+.exchange-rate-chart-empty {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--card-background);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chart-controls {
+    flex-direction: column;
+  }
+
+  .time-range-buttons {
+    justify-content: center;
+  }
+
+  .time-range-btn {
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .chart-container {
+    height: 300px;
+  }
+}
+

@@ -1,0 +1,58 @@
+.margin-card {
+  background: linear-gradient(180deg,#0f1724,#0b1220);
+  border-radius: 10px;
+  padding: 16px;
+  color: #cbd5e1;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  max-width: 760px;
+}
+
+.margin-card-body {
+  display: block;
+}
+
+.margin-title {
+  margin: 0 0 8px 0;
+  color: #7dd3fc;
+  font-weight: 700;
+}
+
+.margin-note {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: #aab4c7;
+}
+
+.margin-table-wrapper {
+  overflow: auto;
+}
+
+.margin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.margin-table th {
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #93c5fd;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.margin-table td {
+  padding: 11px 12px;
+  font-size: 14px;
+  color: #e6eef8;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.margin-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .margin-card { padding: 12px; }
+  .margin-table th, .margin-table td { padding: 8px 10px; }
+}

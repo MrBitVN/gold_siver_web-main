@@ -1,0 +1,174 @@
+.mcx-full-container {
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.mcx-header-full {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mcx-title-box h2 { font-size: 18px; color: #fbbf24; margin: 0 0 8px 0; }
+.mcx-tabs, .mcx-range-tabs { display: flex; gap: 6px; }
+.header-info { font-size: 12px; color: #fff; margin-left: 8px; white-space: nowrap; }
+
+.mcx-tabs button, .mcx-range-tabs button, .mcx-reload-btn {
+  background: #1e293b; border: 1px solid #334155; color: #94a3b8;
+  font-size: 12px; padding: 5px 15px; border-radius: 6px; cursor: pointer;
+}
+
+.mcx-tabs button.active, .mcx-range-tabs button.active {
+  background: #3b82f6; color: white; border-color: #3b82f6;
+}
+
+/* Layout */
+.mcx-main-layout-full {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.mcx-left-sidebar {
+  flex: 0 0 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stats-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.stat-card-v2 { background: #1e293b; padding: 12px; border-radius: 8px; text-align: center; }
+.s-label { display: block; font-size: 10px; color: #94a3b8; margin-bottom: 4px; }
+.s-value { font-size: 14px; font-weight: bold; }
+.positive .s-value { color: #16a34a; }
+.negative .s-value { color: #ef4444; }
+
+.fomo-sidebar-box {
+  background: rgba(30, 41, 59, 0.4);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.fomo-gauge-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fomo-val-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Right Side Charts */
+.mcx-right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 0;
+}
+
+.main-chart-wrapper {
+  background: rgba(30, 41, 59, 0.4);
+  padding: 15px;
+  border-radius: 12px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-charts-container.single-row {
+  display: flex;
+  height: 200px;
+}
+
+.full-width-chart {
+  flex: 1;
+  background: rgba(30, 41, 59, 0.4);
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chart-label-small { font-size: 10px; color: #64748b; margin-bottom: 6px; font-weight: bold; }
+.chart-canvas-area { flex: 1; position: relative; width: 100%; height: 100%; }
+.grid-label { font-size: 11px; color: #64748b; font-weight: bold; margin-bottom: 8px; }
+
+/* Notification System */
+.mcx-noti-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.mcx-noti-item {
+  min-width: 220px;
+  max-width: 300px;
+  padding: 12px 40px 12px 15px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  animation: slideIn 0.3s ease-out forwards;
+  pointer-events: auto;
+  position: relative;
+}
+
+.mcx-noti-item.buy { background: #16a34a; border-left: 4px solid #fff; }
+.mcx-noti-item.sell { background: #ef4444; border-left: 4px solid #fff; }
+
+.noti-close-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(110%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 767px) {
+  .mcx-main-layout-full { flex-direction: column; }
+  .mcx-left-sidebar { flex: none; width: 100%; }
+  .main-chart-wrapper { height: 260px; }
+  .sub-charts-container.single-row { height: 180px; }
+}

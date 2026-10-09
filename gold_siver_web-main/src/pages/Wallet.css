@@ -1,0 +1,512 @@
+/* ================= ROOT COLORS ================= */
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --bg-dark: #0f172a;
+    --bg-light: #f8fafc;
+    --border-light: #e2e8f0;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= GLOBAL STYLES ================= */
+* {
+    box-sizing: border-box;
+}
+
+/* ================= CONTAINER ================= */
+.wallet-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #020617 100%);
+    padding: 50px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* ================= CARD ================= */
+.wallet-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: var(--shadow-lg), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= TITLES ================= */
+.wallet-card>h1 {
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--text-dark);
+    margin: 0 0 40px 0;
+    background: linear-gradient(135deg, #d6d632 0%, #fafafa 100%);;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 35px 0 25px 0;
+    padding: 0;
+}
+
+.section-title:first-of-type {
+    margin-top: 0;
+}
+
+/* ================= FORM STYLES ================= */
+.wallet-form {
+    padding: 35px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    border: 1px solid var(--border-light);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    letter-spacing: 0.5px;
+}
+
+.wallet-form input,
+.wallet-form select {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1.5px solid var(--border-light);
+    font-size: 15px;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    color: #FFD700;
+}
+
+.wallet-form input::placeholder {
+    color: var(--text-muted);
+}
+
+.wallet-form input:hover,
+.wallet-form select:hover {
+    border-color: #cbd5e1;
+}
+
+.wallet-form input:focus,
+.wallet-form select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    background-color: #1e293b  !important;
+}
+
+.wallet-form input[type="number"]::-webkit-outer-spin-button,
+.wallet-form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ================= TOTAL PRICE DISPLAY ================= */
+.total-price-display {
+    background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
+    color: white;
+    border-radius: 14px;
+    padding: 28px;
+    text-align: center;
+    margin: 10px 0;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+}
+
+.total-label {
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.total-amount {
+    font-size: 36px;
+    font-weight: 800;
+    margin-top: 8px;
+    letter-spacing: -1px;
+}
+
+/* ================= BUTTONS ================= */
+.purchase-btn,
+.back-btn {
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: none;
+}
+
+.purchase-btn {
+    background: #4b5563;
+    color: #ffffff;
+    width: 100%;
+    margin-top: 10px;
+    border: 2px solid #4b5563;
+}
+
+.purchase-btn:hover:not(:disabled) {
+    background: #fbbf24;
+    color: #1a1a1a;
+    border-color: #fbbf24;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(251, 191, 36, 0.35);
+}
+
+.purchase-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.purchase-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.back-btn {
+    background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+    color: white;
+    width: 100%;
+    margin-top: 40px;
+    font-size: 15px;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(71, 85, 105, 0.3);
+}
+
+/* ================= ERROR & SUCCESS MESSAGES ================= */
+.error-text {
+    color: var(--danger);
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: -15px;
+    animation: shake 0.3s ease;
+}
+
+.success-text {
+    color: var(--success);
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: -15px;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ================= TRANSACTION HISTORY ================= */
+.wallet-item-json {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 1.6;
+}
+
+.wallet-item-json div {
+    margin-bottom: 5px;
+    color: #94a3b8;
+}
+
+/* ================= MODAL ================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    animation: fadeInOverlay 0.3s ease;
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    /* background: white; */
+    border-radius: 20px;
+    /* padding: 5px; */
+    width: 100%;
+    /* max-width: 480px; */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideUp 0.35s ease;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-content h3 {
+    font-size: 26px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.modal-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1.5px solid var(--border-light);
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.modal-content button {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.modal-content button:first-of-type {
+    background: #e2e8f0;
+    color: var(--text-dark);
+    margin-right: 12px;
+}
+
+.modal-content button:first-of-type:hover {
+    background: #cbd5e1;
+    transform: translateY(-1px);
+}
+
+.modal-content button:last-of-type {
+    background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+    color: white;
+}
+
+.modal-content button:last-of-type:hover {
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    transform: translateY(-1px);
+}
+
+.modal-content>div:last-child {
+    display: flex;
+    gap: 0;
+    margin-top: 25px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .wallet-card {
+        padding: 30px 25px;
+    }
+
+    .wallet-card>h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .wallet-form {
+        padding: 25px;
+        gap: 18px;
+    }
+
+    .modal-content {
+        padding: 15px 0px;
+        /* max-width: 90%; */
+    }
+
+    .total-amount {
+        font-size: 28px;
+    }
+}
+
+.back-btn-custom {
+    width: 48%;
+    padding: 14px 22px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    color: #ffffff;
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-md);
+}
+
+.back-btn-custom:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #7c8591 0%, #5a6577 100%);
+    box-shadow: 0 15px 35px rgba(75, 85, 99, 0.25);
+}
+
+.back-btn-custom:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(75, 85, 99, 0.2);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.signup-btn-custom {
+    width: 48%;
+    padding: 14px 22px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+
+    background: linear-gradient(135deg, #d6d632 0%, #FFD700 100%);
+    color: #1a1a1a;
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-md);
+}
+
+.signup-btn-custom:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #e0e04f 0%, #FFD700 100%);
+    box-shadow: 0 15px 35px rgba(214, 214, 50, 0.35);
+    color: #1a1a1a;
+}
+
+.signup-btn-custom:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(214, 214, 50, 0.25);
+}
+.date-input {
+    width: 100%;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Ẩn icon lịch mặc định nếu muốn */
+.date-input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+/* Focus thì nổi bật */
+.date-input:focus {
+    border-color: #FFD700;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.25);
+    outline: none;
+}

@@ -1,0 +1,71 @@
+/* Page-level styles for ETF chart page (non-chart internals) */
+:root{
+  --bg:#0b0b0c;
+  --card:#0f1113;
+  --muted:#9aa0a6;
+  --accent:#ffd700;
+  --glass: rgba(255,255,255,0.03);
+}
+
+.etf-page{
+  max-width:1200px;
+  margin:20px auto;
+  padding:20px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color:var(--muted);
+}
+
+.etf-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.etf-title{
+  color:var(--accent);
+  font-size:18px;
+  margin:0 0 8px 0;
+}
+
+.etf-subtitle{
+  color:var(--muted);
+  margin:0;
+  font-size:13px;
+}
+
+.etf-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+
+@media(min-width:980px){
+  .etf-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.etf-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:10px;
+  padding:12px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+.chart-container{
+  height:300px;
+  background:transparent;
+  padding:8px;
+}
+
+.section-full{
+  grid-column: 1 / -1;
+}
+
+.small-muted{
+  color:var(--muted);
+  font-size:12px;
+}

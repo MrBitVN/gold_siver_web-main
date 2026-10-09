@@ -1,0 +1,400 @@
+.lbma-summary-table {
+  margin-top: 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lbma-summary-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.lbma-summary-table th,
+.lbma-summary-table td {
+  padding: 10px 12px;
+  border: 1px solid #0750e1;
+  text-align: left;
+}
+
+.lbma-summary-table th {
+  background: #235d97;
+  font-weight: 600;
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .lbma-summary-table {
+    margin-top: 16px;
+  }
+
+  .lbma-summary-table table {
+    font-size: 12px;
+    min-width: 500px;
+  }
+
+  .lbma-summary-table th,
+  .lbma-summary-table td {
+    padding: 8px 10px;
+  }
+}
+
+.api-switch {
+  margin-top: 10px;
+}
+
+.api-switch button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.api-switch button.active {
+  background: #c0c0c0;
+  color: #070ee0;
+  font-weight: bold;
+}
+
+.percentage-grid--one-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  justify-content: center;
+  -webkit-overflow-scrolling: touch;
+}
+
+.percentage-grid--one-row .percentage-item {
+  flex-shrink: 0;
+}
+
+.chart-range-filter {
+  justify-content: center;
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.chart-range-filter button {
+  padding: 6px 12px;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid #333;
+  color: #111;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.chart-range-filter button.active {
+  background: #00ff9c;
+  color: #000;
+  border-color: #00ff9c;
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .api-switch button {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .chart-range-filter button {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
+
+/* ================= MOBILE FIX 375px ================= */
+@media (max-width: 480px) {
+
+  /* Container tổng */
+  .china-wrapper {
+    padding: 6px !important;
+  }
+
+  /* Card chính */
+  .china-card {
+    padding: 8px !important;
+    border-radius: 10px !important;
+  }
+
+  /* Grid 1 cột hoàn toàn */
+  .china-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  /* Chart giảm chiều cao */
+  .china-chart-container {
+    height: 160px !important;
+    padding: 4px !important;
+  }
+
+  /* Box phần trăm 2 cột cố định */
+  .china-percentage-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+    padding: 8px !important;
+  }
+
+  .china-percentage-item {
+    padding: 6px !important;
+  }
+
+  /* Nút nhỏ lại */
+  .china-button {
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+  }
+
+  /* Tiêu đề nhỏ lại */
+  .china-title {
+    font-size: 14px !important;
+    margin: 6px 0 !important;
+  }
+
+}
+
+.turnoverchinasilver-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.turnoverchinasilver-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.turnoverchinasilver-card {
+  background: rgba(15, 23, 42, 0.65);
+  border-radius: 18px;
+  padding: 30px;
+  border: 1px solid rgba(192, 192, 192, 0.15);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+.turnoverchinasilver-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.turnoverchinasilver-grid.mobile {
+  grid-template-columns: 1fr;
+}
+
+.turnoverchinasilver-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.turnoverchinasilver-subtitle {
+  text-align: center;
+  color: #9ca3af;
+}
+
+.turnoverchinasilver-button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.turnoverchinasilver-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #494a50;
+  color: white;
+  transition: all 0.25s ease;
+}
+
+.turnoverchinasilver-btn:hover {
+  transform: translateY(-2px);
+}
+
+.turnoverchinasilver-btn.active {
+  background: #c0c0c0;
+  color: black;
+  font-weight: 600;
+}
+
+.turnoverchinasilver-btn.light {
+  background: white;
+  color: black;
+}
+
+.turnoverchinasilver-active-green {
+  background: #00ff9c;
+  font-weight: 600;
+}
+
+.turnoverchinasilver-update-box {
+  width: 100%;
+  padding: 14px;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.turnoverchinasilver-change-title {
+  color: #fff3b0;
+  font-size: 18px;
+}
+
+.turnoverchinasilver-change-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  width: 100%;
+}
+
+.turnoverchinasilver-change-card {
+  background: rgba(15, 23, 42, 0.55);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid rgba(192, 192, 192, 0.2);
+  transition: all 0.25s ease;
+}
+
+.turnoverchinasilver-change-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(192, 192, 192, 0.6);
+}
+
+.turnoverchinasilver-positive {
+  color: #22c55e;
+}
+
+.turnoverchinasilver-negative {
+  color: #ef4444;
+}
+
+.turnoverchinasilver-right {
+  height: 520px;
+}
+
+.turnoverchinasilver-loading {
+  text-align: center;
+  color: white;
+}
+
+.turnoverchinasilver-summary-table {
+  margin-top: 40px;
+}
+
+.turnoverchinasilver-summary-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.turnoverchinasilver-summary-table th,
+.turnoverchinasilver-summary-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid rgba(192, 192, 192, 0.2);
+}
+
+.turnoverchinasilver-summary-table th {
+  background: rgba(30, 41, 59, 0.6);
+}
+
+/* ================= MOBILE 375px - 425px FIX ================= */
+@media (max-width: 480px) {
+  .turnoverchinasilver-container {
+    padding: 2px !important;
+  }
+
+  .turnoverchinasilver-title {
+    font-size: 12px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .turnoverchinasilver-card {
+    padding: 6px !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+  }
+
+  .turnoverchinasilver-grid {
+    gap: 4px !important;
+  }
+
+  .turnoverchinasilver-left {
+    gap: 4px !important;
+  }
+
+  .turnoverchinasilver-subtitle {
+    font-size: 9px !important;
+    margin: 0 !important;
+  }
+
+  .turnoverchinasilver-button-group {
+    gap: 3px !important;
+  }
+
+  .turnoverchinasilver-btn {
+    padding: 3px 6px !important;
+    font-size: 9px !important;
+    border-radius: 4px !important;
+  }
+
+  .turnoverchinasilver-update-box {
+    padding: 4px !important;
+    border-radius: 6px !important;
+    font-size: 8px !important;
+  }
+
+  .turnoverchinasilver-update-box span,
+  .turnoverchinasilver-update-box strong {
+    display: block;
+    font-size: 8px !important;
+  }
+
+  .turnoverchinasilver-change-title {
+    font-size: 9px !important;
+    margin: 0 !important;
+  }
+
+  .turnoverchinasilver-change-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4px !important;
+  }
+
+  .turnoverchinasilver-change-card {
+    padding: 4px !important;
+    border-radius: 6px !important;
+  }
+
+  .turnoverchinasilver-change-card span {
+    font-size: 7px !important;
+    display: block;
+    margin-bottom: 2px !important;
+  }
+
+  .turnoverchinasilver-change-card strong {
+    font-size: 10px !important;
+  }
+
+  .turnoverchinasilver-right {
+    height: 140px !important;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,218 @@
+/* --- CONTAINER CHÍNH --- */
+.prediction-containerer {
+    width: 100%;
+    background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+    border-radius: 12px;
+    padding: 30px 20px;
+    margin: 30px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.prediction-containerer.error {
+    color: #ff4444;
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- FIX LỖI TIÊU ĐỀ DÍNH NHAU --- */
+/* Căn chỉnh lại Header Row để Tiêu đề và Cập nhật tách biệt */
+.header-row-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Khoảng cách rõ ràng giữa 2 dòng chữ */
+    text-align: left;
+}
+
+.prediction-title {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.prediction-title .highlight-time {
+    color: #FFD700;
+    font-weight: 800;
+    background: rgba(255, 215, 0, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Dòng cập nhật đã được dịch xuống dưới */
+.prediction-updated {
+    text-align: left;
+    color: #ffd700;
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* --- GRID VÀ ITEMS --- */
+.prediction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.prediction-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.prediction-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.prediction-item h3 {
+    color: #ffd700;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* --- HIỆU ỨNG SÓNG NƯỚC (WAVE EFFECT) --- */
+.wave-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.wave-content {
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.wave-content h2 {
+    font-size: 32px;
+    font-weight: 900;
+    position: absolute;
+    margin: 0;
+    font-family: 'Arial Black', sans-serif;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Lớp chữ viền rỗng */
+.wave-content h2:nth-child(1) {
+    color: transparent;
+    opacity: 0.2;
+}
+
+/* Lớp chữ dâng nước với clip-path nhấp nhô */
+.wave-content h2:nth-child(2) {
+    animation: wave-animate 4s ease-in-out infinite;
+}
+
+@keyframes wave-animate {
+    0%, 100% {
+        clip-path: polygon(
+            0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%
+        );
+    }
+    50% {
+        clip-path: polygon(
+            0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%
+        );
+    }
+}
+
+/* --- THÔNG TIN CHI TIẾT --- */
+.prediction-info {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.prediction-info p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.prediction-info .actual {
+    color: #b3b3b3;
+}
+
+/* Màu sắc động cho dự đoán */
+.positive { color: #00d084; } /* Thấp hơn dự đoán */
+.negative { color: #ff4444; } /* Cao hơn dự đoán */
+
+.prediction-info .forecast-change {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* --- GAUGE CHART --- */
+.gauge-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.custom-gauge {
+    position: relative;
+}
+
+.gauge-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+/* Ẩn label mặc định của thư viện Gauge để dùng text tùy chỉnh */
+.custom-gauge svg text, 
+.custom-gauge .gauge-value {
+    display: none !important;
+}
+
+.gauge-hover-area {
+    display: inline-block;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .header-row-custom {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .prediction-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prediction-title {
+        font-size: 20px;
+    }
+
+    .wave-content h2 {
+        font-size: 26px;
+    }
+}

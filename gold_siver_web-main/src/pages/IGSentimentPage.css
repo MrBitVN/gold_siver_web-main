@@ -1,0 +1,40 @@
+.ig-page {
+  padding: 20px;
+}
+
+.ig-page-header {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.ig-page-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #fff;
+}
+
+.ig-page-header p {
+  margin: 6px 0 0 0;
+  color: #c0c0c0;
+}
+
+.ig-page-content {
+  display: grid;
+  /* single column so content fills available width */
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+  width: 100%;
+}
+
+.ig-overview {
+  width: 100%;
+}
+
+/* Chart styling is handled inside the IGSentiment component now */
+
+@media (max-width: 900px) {
+  .ig-page-content {
+    grid-template-columns: 1fr;
+  }
+}

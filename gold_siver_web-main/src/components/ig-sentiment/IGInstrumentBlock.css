@@ -1,0 +1,20 @@
+.instrument-block {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-top: 18px;
+}
+
+.instrument-left {
+  flex: 0 0 420px; /* giữ kích thước giống .instrument-card */
+}
+
+.instrument-right {
+  flex: 1 1 0;
+  min-width: 280px;
+}
+
+@media (max-width: 900px) {
+  .instrument-block { flex-direction: column; }
+  .instrument-left, .instrument-right { flex: 1 1 0; }
+}

@@ -1,0 +1,21 @@
+.containt-select {
+    display: flex;
+    position: absolute;
+    border-radius: 4px;
+    overflow: hidden;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #343A40;
+    color: white;
+}
+
+.select{
+    padding: 8px;
+    cursor: pointer;
+}
+
+.active{
+    background-color: #0069D9;
+}

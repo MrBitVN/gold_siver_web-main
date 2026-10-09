@@ -1,0 +1,37 @@
+.silver-table-wrapper {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.silver-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1f2937;
+  color: #fff;
+  font-size: 14px;
+}
+
+.silver-table thead {
+  background: #facc15;
+  color: #000;
+}
+
+.silver-table th,
+.silver-table td {
+  border: 1px solid #374151;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.silver-table tbody tr:nth-child(even) {
+  background: #111827;
+}
+
+.silver-table tbody tr:hover {
+  background: #374151;
+}
+
+.silver-table .price {
+  color: #22c55e;
+  font-weight: 600;
+}

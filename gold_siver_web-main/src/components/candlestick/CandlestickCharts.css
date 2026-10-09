@@ -1,0 +1,62 @@
+/* CandlestickCharts.css - Layout 3 biểu đồ nến */
+
+.candlestick-section {
+  width: 100%;
+  /* max-width: 1400px; */
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-yellow);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Grid Layout - 3 cột ngang */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Responsive - Tablet: 2 cột */
+@media (max-width: 1024px) {
+}
+
+/* Responsive - Mobile: 1 cột */
+@media (max-width: 768px) {
+  .candlestick-section {
+    margin: 2rem auto;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.25rem;
+  }
+}

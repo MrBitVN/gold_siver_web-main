@@ -1,0 +1,195 @@
+.darkpool-card {
+    background: linear-gradient(180deg, #04060a, #061022);
+    border-radius: 10px;
+    padding: 12px;
+    color: #e6eef8;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.darkpool-header {
+    font-size: 17px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.darkpool-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    table-layout: fixed;
+    /* 🔥 quan trọng */
+}
+
+
+.darkpool-table th {
+    text-align: left;
+    padding: 8px 6px;
+    color: #94a3b8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.darkpool-table td {
+    padding: 8px 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.darkpool-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.darkpool-table td:last-child {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.dp-loading {
+    font-size: 13px;
+    color: #94a3b8;
+    padding: 10px;
+}
+
+.dp-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.dp-pagination button {
+    background: #020617;
+    color: #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.dp-pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.darkpool-table td:nth-child(1) {
+    width: 20%;
+    color: lightcoral;
+}
+
+.darkpool-table th:nth-child(1) {
+    width: 20%;
+    color: #ffffff;
+}
+
+.darkpool-table td:nth-child(2) {
+    width: 20%;
+    color: lightblue;
+}
+
+.darkpool-table th:nth-child(2) {
+    width: 20%;
+    color: #ffffff;
+}
+
+.darkpool-table td:nth-child(3) {
+    width: 25%;
+    color: #ffd700;
+}
+
+.darkpool-table th:nth-child(3) {
+    width: 25%;
+    color: #ffffff;
+}
+
+.darkpool-table td:nth-child(4) {
+    width: 35%;
+}
+
+.darkpool-table th:nth-child(4) {
+    width: 35%;
+    color: #ffffff;
+}
+
+.darkpool-table th,
+.darkpool-table td {
+    padding: 8px 6px;
+    white-space: nowrap;
+}
+
+.darkpool-table th:nth-child(1),
+.darkpool-table td:nth-child(1) {
+    text-align: left;
+    /* Level */
+}
+
+.darkpool-table th:nth-child(2),
+.darkpool-table td:nth-child(2),
+.darkpool-table th:nth-child(3),
+.darkpool-table td:nth-child(3) {
+    text-align: right;
+    /* Traders + Volume */
+}
+
+.darkpool-table th:nth-child(4),
+.darkpool-table td:nth-child(4) {
+    text-align: right;
+    /* Premium */
+}
+
+.dp-page-input {
+    width: 50px;
+    text-align: center;
+    background: #020617;
+    color: #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: 4px 6px;
+    font-size: 12px;
+}
+
+.dp-page-input:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+/* Ẩn mũi tên tăng/giảm trong input number */
+
+/* Chrome, Edge, Safari */
+.dp-page-input::-webkit-outer-spin-button,
+.dp-page-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.dp-page-input {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.darkpool-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.darkpool-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.dp-level-cell {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.dp-price {
+    font-weight: 600;
+    font-size: 14px;
+    color: lightcoral;
+}
+
+.dp-time {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-top: 2px;
+}

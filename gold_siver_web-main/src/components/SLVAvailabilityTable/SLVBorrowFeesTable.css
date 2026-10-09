@@ -1,0 +1,156 @@
+.slv-borrow-fees-scope {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #0F172A;
+    color: #F1F5F9;
+}
+
+.slv-borrow-fees-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Header */
+.slv-borrow-fees-header {
+    margin-bottom: 32px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 16px;
+}
+
+.slv-borrow-fees-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #F1F5F9;
+}
+
+.slv-borrow-fees-header p {
+    font-size: 14px;
+    color: #94A3B8;
+    margin: 0;
+}
+
+/* Table Container */
+.slv-borrow-fees-table-container {
+    background: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.slv-scroll-area {
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
+/* Table Styling */
+.slv-borrow-fees-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.slv-borrow-fees-table thead {
+    background: #0F172A;
+    border-bottom: 2px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.slv-borrow-fees-table thead th {
+    padding: 16px 12px;
+    text-align: center;
+    font-weight: 600;
+    color: #E2E8F0;
+    background: #0F172A;
+    border-bottom: 2px solid #334155;
+    white-space: nowrap;
+}
+
+.slv-borrow-fees-table tbody tr {
+    border-bottom: 1px solid #334155;
+    transition: background-color 0.2s ease;
+}
+
+.slv-borrow-fees-table tbody tr:hover {
+    background-color: #1E293B;
+}
+
+.slv-borrow-fees-table tbody td {
+    padding: 12px;
+    color: #CBD5E1;
+    vertical-align: middle;
+}
+
+/* Text Alignment */
+.slv-left {
+    text-align: left;
+}
+
+.slv-center {
+    text-align: center;
+}
+
+.slv-right {
+    text-align: right;
+}
+
+/* Text Styling */
+.slv-gray {
+    color: #94A3B8;
+}
+
+.slv-bold {
+    font-weight: 600;
+    color: #E2E8F0;
+}
+
+/* Info */
+.slv-borrow-fees-info {
+    text-align: left;
+    font-size: 15px;
+    color: white;
+    padding: 12px 0;
+}
+
+/* Loading & Error */
+.slv-loading,
+.slv-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    font-size: 16px;
+    color: #94A3B8;
+    background: #0F172A;
+    border-radius: 8px;
+}
+
+.slv-error {
+    background: rgba(248, 113, 113, 0.1);
+    color: #F87171;
+    border: 1px solid #384040;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .slv-borrow-fees-container {
+        padding: 16px;
+    }
+
+    .slv-borrow-fees-header h1 {
+        font-size: 20px;
+    }
+
+    .slv-borrow-fees-table {
+        font-size: 12px;
+    }
+
+    .slv-borrow-fees-table thead th,
+    .slv-borrow-fees-table tbody td {
+        padding: 10px 8px;
+    }
+}

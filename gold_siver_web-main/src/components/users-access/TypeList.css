@@ -1,0 +1,45 @@
+.log-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    padding: 10px;
+}
+
+.log-box {
+    background: #1f1f1f;
+    border: 1px solid #2c2c2c;
+    border-radius: 12px;
+    padding: 18px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.log-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.log-id {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.log-box p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #4da6ff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+}

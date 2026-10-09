@@ -1,0 +1,171 @@
+/* ===========================
+   PANEL WRAPPER
+=========================== */
+.filter-panel {
+  background: #252f3f;
+  padding: 20px;
+  border-radius: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 20px;
+  border: 1px solid #2d3a4d;
+  justify-content: flex-start;
+}
+
+
+/* ===========================
+   REGION BUTTON GROUP
+=========================== */
+.region-button {
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.region-button.active {
+  background: #facc15;
+  color: #000;
+  border-color: #facc15;
+}
+
+.region-button.inactive {
+  background: #1e293b;
+  color: #8fa3c4;
+  border-color: #334155;
+}
+
+.region-button:hover {
+  filter: brightness(1.15);
+}
+
+/* container để giữ list button theo hàng */
+.store-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+/* ===========================
+   STORE SELECT
+=========================== */
+.store-select {
+  min-width: 220px;
+  padding: 9px 14px;
+  border-radius: 12px;
+  background: #1e293b;
+  color: #f8fafc;
+  font-size: 15px;
+  border: 1px solid #334155;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.store-select:hover {
+  background: #243447;
+}
+
+.store-select:focus {
+  border-color: #facc15;
+  background: #243447;
+}
+
+/* ===========================
+   FILTER BOX (min—max…)
+=========================== */
+.filter-box {
+  background: #1e293b;
+  padding: 10px 16px;
+  border-radius: 14px;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  min-width: 160px;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-box:hover {
+  border-color: #facc15;
+}
+
+.filter-label {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.filter-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ===========================
+   TITLES
+=========================== */
+.store-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #f8fafc;
+}
+
+.store-title .dot {
+  width: 8px;
+  height: 8px;
+  background: #f43f5e;
+  border-radius: 50%;
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .filter-panel {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .store-select {
+    min-width: 180px;
+  }
+
+  .filter-box {
+    min-width: 150px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .filter-panel {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .store-list-container {
+    justify-content: center;
+  }
+
+  .region-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .filter-box,
+  .store-select {
+    width: 100%;
+  }
+}

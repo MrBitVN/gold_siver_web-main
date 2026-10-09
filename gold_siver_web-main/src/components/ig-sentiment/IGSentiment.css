@@ -1,0 +1,252 @@
+.sentiment-container {
+    background:#000000 ;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+}
+
+.sentiment-container.loading,
+.sentiment-container.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: #666;
+}
+
+.sentiment-container.error {
+    color: #ff6b6b;
+    background: #ffe0e0;
+}
+
+.sentiment-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.sentiment-header h2 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 600;
+    color: #ffff;
+    text-align: center;
+}
+
+.ig-title-link {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background-color 0.18s ease, transform 0.08s ease;
+}
+
+.ig-title-link:hover,
+.ig-title-link:focus {
+    background: rgba(255,255,255,0.06);
+    text-decoration: underline;
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.sentiment-header .update-time {
+    margin: 5px 0 0 0;
+    padding-right: 23px;
+    font-size: 14px;
+    color: #c0f158;
+    font-style: italic;
+    text-align: center;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.price-box {
+    flex: 0 0 auto;
+    border-radius: 6px;
+    padding: 15px 20px;
+    text-align: center;
+    min-width: 120px;
+}
+
+.price-box.sell {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+    color: white;
+}
+
+.price-box.buy {
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    color: white;
+}
+
+.price-label {
+    font-size: 16px !important; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    margin-bottom: 5px;
+    color: #ffffff !important;
+}
+
+.price-value {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.price-change {
+    flex: 1;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.change-value {
+    font-size: 24px !important;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.high-low {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 13px;
+    color: #666;
+}
+
+.high-low span {
+    white-space: nowrap;
+    font-weight: 600;
+    color: #ffd700;
+    font-size: 16px;
+}
+.high-low .high1{
+    color: lightcoral;
+    font-weight: 600;
+    font-size: 16px;
+}
+.high-low .low1{
+    color: lightblue;
+    font-weight: 600;
+    font-size: 16px;
+}
+.sentiment-bar-section {
+    padding: 10px 0;
+}
+
+.sentiment-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background: #f0f0f0;
+}
+
+.sentiment-fill {
+    height: 100%;
+    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sentiment-fill.long {
+    background: linear-gradient(90deg, #2196F3 0%, #42A5F5 100%);
+}
+
+.sentiment-fill.short {
+    background: linear-gradient(90deg, #EF5350 0%, #FF6B6B 100%);
+}
+
+.sentiment-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.sentiment-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.sentiment-item.long .label {
+    color: #2196F3;
+    font-weight: 600;
+}
+
+.sentiment-item.short .label {
+    color: #EF5350;
+    font-weight: 600;
+}
+
+.sentiment-item .percent {
+    font-weight: 700;
+    font-size: 14px;
+    min-width: 48px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.sentiment-item.long .percent {
+    color: #2196F3;
+}
+
+.sentiment-item.short .percent {
+    color: #EF5350;
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .sentiment-container {
+        padding: 15px;
+    }
+
+    .price-section {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .price-box {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .price-change {
+        order: -1;
+        padding: 10px;
+        background: #f9f9f9;
+        border-radius: 6px;
+    }
+
+    .high-low {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .sentiment-labels {
+        justify-content: space-around;
+    }
+}
+
+.price-bar-chart-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.price-bar-chart-section h3 {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}

@@ -1,0 +1,204 @@
+/* ================== CONTAINER ================== */
+.weekly-chart-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f172a;
+}
+
+.weekly-chart-card {
+    width: 90%;
+    max-width: 1200px;
+    background: #020617;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ================== BUTTONS ================== */
+.chart-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.chart-tab-btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #e5e7eb;
+    transition: all 0.25s ease;
+}
+
+.chart-tab-btn:hover {
+    background: #ffd700;
+    color: #000;
+}
+
+.chart-tab-btn.active {
+    background: #ffd700;
+    color: #000;
+}
+
+/* ================== CHART ================== */
+.chart-container {
+    height: 520px;
+    /* ⬅️ tăng chiều cao */
+    width: 100%;
+}
+
+.chart-inner {
+    position: relative;
+    height: 420px;
+    min-height: 420px;
+}
+
+
+.chart-scroll-x {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 12px;
+}
+
+.chart-scroll-x::-webkit-scrollbar {
+    height: 8px;
+}
+
+.chart-scroll-x::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 6px;
+}
+
+.chart-scroll-x::-webkit-scrollbar-track {
+    background: #020617;
+}
+
+.server-select {
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #020617;
+    border: 1px solid #334155;
+    color: #e5e7eb;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.server-select:hover {
+    border-color: #ffd700;
+}
+
+.server-select:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.25);
+}
+
+.server-select option {
+    background: #020617;
+    color: #e5e7eb;
+}
+
+.chart-scroll-x {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.weekly-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.weekly-card {
+    background: #0f172a;
+    border-radius: 12px;
+    padding: 12px 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.weekly-card h4 {
+    margin: 0;
+    color: #f8fafc;
+}
+
+.week-range {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 8px;
+}
+
+.server-chart {
+    background: #0f172a;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.server-title {
+    margin-bottom: 12px;
+    color: #facc15;
+    font-size: 18px;
+}
+
+.week-select {
+    padding: 8px 12px;
+    background: #020617;
+    color: #e5e7eb;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    outline: none;
+}
+
+.week-select option {
+    background: #020617;
+}
+
+.week-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin-bottom: 28px;
+    /* ⬅️ khoảng cách với biểu đồ */
+}
+
+.sort-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sort-btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background: #020617;
+    color: #e5e7eb;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sort-btn:hover {
+    background: #facc15;
+    color: #000;
+    border-color: #facc15;
+}
+
+.sort-btn.active {
+    background: #facc15;
+    color: #000;
+    border-color: #facc15;
+    font-weight: 600;
+}

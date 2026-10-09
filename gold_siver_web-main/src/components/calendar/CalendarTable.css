@@ -1,0 +1,75 @@
+/* Calendar Table Container */
+.calendar-table {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* Header giống screenshot */
+.calendar-header {
+  display: grid;
+  grid-template-columns: 140px 80px 120px 1fr 350px;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  background: #000;
+  color: #ffe451;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border: 2px solid #000;
+  border-bottom: none;
+}
+
+.calendar-header > div {
+  display: flex;
+  align-items: center;
+}
+
+.header-col-datetime {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.header-col-country,
+.header-col-importance {
+  justify-content: center;
+}
+
+.header-col-stats {
+  justify-content: flex-end;
+}
+
+/* Body */
+.calendar-body {
+  background: #ffe451;
+}
+
+/* Empty state */
+.calendar-empty {
+  padding: 3rem;
+  text-align: center;
+  background: #ffe451;
+  border: 2px solid #000;
+  color: #000;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .calendar-header {
+    grid-template-columns: 120px 70px 100px 1fr 300px;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-header {
+    display: none; /* Ẩn header trên mobile */
+  }
+  
+  .calendar-table {
+    margin: 1rem 0;
+  }
+}
+

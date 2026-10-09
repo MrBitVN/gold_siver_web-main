@@ -1,0 +1,151 @@
+<span>
+    import React, { useEffect, useState } from 'react';
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
+
+// Hàm tính trung bình trượt SMA để làm mượt RSI
+const calculateSMA = (data, windowSize = 14) => {
+  return data.map((val, index, arr) => {
+    if (index < windowSize - 1) return val; 
+    const window = arr.slice(index - windowSize + 1, index + 1);
+    const sum = window.reduce((a, b) => a + b, 0);
+    return Number((sum / windowSize).toFixed(2));
+  });
+};
+
+const GoldSilverChart = () => {
+  const [options, setOptions] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [resGold, resSilver] = await Promise.all([
+          fetch('https://api_gold.thinkdiff.us/volume_xau_usd?page=1').then(res => res.json()),
+          fetch('https://api_gold.thinkdiff.us/volume_xag_usd?page=1').then(res => res.json())
+        ]);
+        
+        // Đảo ngược để dữ liệu chạy từ cũ đến mới (trái sang phải)
+        const goldList = (resGold.data.list_volume || []).reverse();
+        const silverList = (resSilver.data.list_volume || []).reverse();
+
+        // 1. LẤY ĐẦY ĐỦ NGÀY THÁNG NĂM TỪ TIMESTAMP
+        const categories = goldList.map(item => item.timestamp);
+
+        // 2. TÍNH TOÁN RSI TRUNG BÌNH (LÀM MƯỢT)
+        const goldRSISmooth = calculateSMA(goldList.map(item => item.rsi), 14);
+        const silverRSISmooth = calculateSMA(silverList.map(item => item.rsi), 14);
+
+        setOptions({
+          chart: {
+            height: 700,
+            backgroundColor: '#121212',
+          },
+          title: {
+            text: 'BIỂU ĐỒ PHÂN TÍCH VÀNG & BẠC (FULL TIMESTAMP)',
+            style: { color: '#FFD700', fontWeight: 'bold' }
+          },
+          xAxis: {
+            categories: categories,
+            labels: { 
+              style: { color: '#CCC', fontSize: '10px' },
+              rotation: -45 // Xoay nghiêng để không bị đè chữ ngày tháng
+            },
+            tickInterval: 5, // Hiển thị cách quãng để trục X không bị dày đặc
+            crosshair: true
+          },
+          yAxis: [
+            {
+              title: { text: 'Giá & Volume', style: { color: '#FFF' } },
+              height: '60%',
+              gridLineColor: '#2d2d2d',
+              labels: { style: { color: '#FFF' } }
+            },
+            {
+              // --- VÙNG BIỂU ĐỒ RSI (Khoanh tròn xanh của bạn) ---
+              title: { text: 'RSI TRUNG BÌNH (14)', style: { color: '#FF00FF' } },
+              top: '70%',
+              height: '25%',
+              offset: 0,
+              gridLineColor: '#2d2d2d',
+              plotLines: [
+                { value: 70, color: 'red', width: 1, dashStyle: 'shortdash' },
+                { value: 30, color: 'green', width: 1, dashStyle: 'shortdash' }
+              ],
+              labels: { style: { color: '#FF00FF' } },
+              max: 100,
+              min: 0
+            }
+          ],
+          series: [
+            {
+              name: 'Vàng Volume',
+              type: 'column',
+              data: goldList.map(i => i.volume),
+              color: 'rgba(255, 215, 0, 0.2)',
+              yAxis: 0
+            },
+            {
+              name: 'Bạc Volume',
+              type: 'column',
+              data: silverList.map(i => i.volume),
+              color: 'rgba(0, 255, 0, 0.2)',
+              yAxis: 0
+            },
+            {
+              name: 'Giá Vàng',
+              type: 'line',
+              data: goldList.map(i => i.close_price),
+              color: '#FFD700',
+              marker: { enabled: false }
+            },
+            {
+              name: 'Giá Bạc',
+              type: 'line',
+              data: silverList.map(i => i.close_price),
+              color: '#00BFFF',
+              marker: { enabled: false }
+            },
+            // --- ĐƯỜNG RSI ĐÃ LÀM MƯỢT ---
+            {
+              name: 'XAU RSI (Mượt)',
+              type: 'spline',
+              data: goldRSISmooth,
+              color: '#FF00FF',
+              yAxis: 1,
+              lineWidth: 2,
+              marker: { enabled: false }
+            },
+            {
+              name: 'XAG RSI (Mượt)',
+              type: 'spline',
+              data: silverRSISmooth,
+              color: '#00FFFF',
+              yAxis: 1,
+              lineWidth: 2,
+              marker: { enabled: false }
+            }
+          ],
+          tooltip: { shared: true },
+          credits: { enabled: false }
+        });
+      } catch (error) {
+        console.error("Lỗi API:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div style={{ backgroundColor: '#000', minHeight: '100vh', padding: '10px' }}>
+      {options ? (
+        <HighchartsReact highcharts={Highcharts} options={options} />
+      ) : (
+        <h2 style={{ color: 'white', textAlign: 'center' }}>Đang tải dữ liệu thực tế...</h2>
+      )}
+    </div>
+  );
+};
+
+export default GoldSilverChart;
+</span>

@@ -1,0 +1,286 @@
+/* ===== GLOBAL ===== */
+body {
+  overflow-x: hidden;
+}
+
+/* ===== TITLE ===== */
+.cm-chart-title {
+  text-align: center;
+  color: #fff;
+  margin: 16px 0;
+  font-size: 18px;
+}
+
+/* ===== TOOLBAR ===== */
+/* .cm-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.cm-time-filter {
+  display: flex;
+  gap: 8px;
+}
+
+.cm-time-filter select {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1e293b;
+  color: white;
+  font-size: 14px;
+}
+
+.cm-refresh-btn {
+  width: 100%;
+  background: #ffd700;
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+} */
+
+.cm-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* mỗi bên */
+.cm-toolbar-side {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+/* label */
+.cm-label {
+  font-weight: bold;
+  color: #fff;
+}
+ 
+/* select */
+.cm-toolbar select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+/* nút refresh */
+.cm-refresh-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffd700;
+  color:black;
+  transition: 0.2s;
+}
+
+.cm-refresh-btn:hover {
+  background-color: #f6fa04;
+}
+
+/* GOLD style */
+.cm-toolbar-side.gold {
+  background: linear-gradient(135deg, #bfa900, #8d7a00);
+}
+
+/* SILVER style */
+.cm-toolbar-side.silver {
+  background: linear-gradient(135deg, #6e6e6e, #444);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .cm-toolbar {
+    flex-direction: column;
+  }
+
+  .cm-toolbar-side {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* ===== TOP 5 ===== */
+.top5-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.top5-item {
+  width: 100%;
+}
+
+.top5-item h3 {
+  text-align: center;
+  font-size: 16px;
+}
+
+/* scroll ngang cho table */
+.top5-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.top5-table {
+  min-width: 600px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.top5-table th,
+.top5-table td {
+  border: 1px solid #ddd;
+  padding: 6px;
+  text-align: center;
+}
+
+.top5-table th {
+  background: #3c3838;
+}
+
+.top5-table tbody tr:hover {
+  background: #1f1d1d;
+}
+
+.long {
+  color: #00ff9d;
+  font-weight: 600;
+}
+
+.short {
+  color: #ff4d4f;
+  font-weight: 600;
+}
+
+/* ===== CHART CONTAINER ===== */
+.cm-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== CHART BOX ===== */
+.cm-chart-box {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid #bec391;
+}
+
+/* giảm chiều cao chart */
+.cm-chart-box canvas {
+  max-height: 260px !important;
+}
+
+/* ===== DETAIL ===== */
+.cm-detail-box {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+  border: 1px solid #2a2a2a;
+}
+
+.cm-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cm-detail-title {
+  font-size: 14px;
+  color: #fff;
+}
+
+.cm-link-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  background: #1890ff;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+}
+
+/* grid detail */
+.cm-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.cm-item {
+  background: #111;
+  border: 1px solid #2c2c2c;
+  border-radius: 6px;
+  font-size: 12px;
+  text-align: center;
+  display: block;
+  justify-content: space-between; 
+  padding: 6px 0; 
+  margin-bottom: 8px;   
+}
+
+.cm-item span {
+  margin-right: 8px; 
+  display: block;      
+  font-weight: 500;     
+  margin-bottom: 4px; 
+}
+
+.cm-item strong {
+  word-break: break-word;
+  display: block;       /* value xuống dòng */
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 768px) {
+
+  .cm-toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cm-time-filter {
+    width: auto;
+  }
+
+  .cm-refresh-btn {
+    width: auto;
+  }
+
+  .top5-container {
+    flex-direction: row;
+  }
+
+  .cm-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cm-chart-box {
+    flex: 1 1 48%;
+    min-width: 400px;
+  }
+
+  .cm-detail-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}

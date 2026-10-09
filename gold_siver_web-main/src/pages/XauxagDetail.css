@@ -1,0 +1,121 @@
+/* Layout */
+.article-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+    line-height: 1.75;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    background: transparent
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 18px;
+    color: var(--accent);
+    transition: 0.25s ease;
+}
+
+.back-btn:hover {
+    text-shadow: 0 0 6px rgba(0, 230, 255, 0.8);
+}
+
+/* Titles */
+.article-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #f1f5f9;
+}
+
+.article-lead {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+/* Section */
+section {
+    margin-top: 38px;
+}
+
+/* Heading */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #e9edf3;
+}
+
+/* Highlight */
+.stat-highlight {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* Info Block */
+.info-box {
+    background: var(--bg-secondary);
+    padding: 18px 22px;
+    border-radius: var(--radius);
+    margin: 18px 0;
+    border: 1px solid var(--accent-soft);
+    box-shadow: 0 0 14px rgba(0, 230, 255, 0.08);
+}
+
+/* Quote */
+.quote {
+    border-left: 4px solid var(--accent);
+    padding-left: 16px;
+    font-style: italic;
+    margin: 22px 0;
+    color: var(--text-muted);
+}
+
+/* App cards grid */
+.card-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* Single card block */
+.app-card {
+    padding: 18px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Timeline factor cards */
+.factor-card {
+    display: flex;
+    gap: 16px;
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    background: var(--bg-secondary);
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(3px);
+}
+
+.factor-number {
+    font-weight: 700;
+    min-width: 110px;
+    color: var(--accent);
+}
+
+/* Color themes subtle neon */
+.factor-card.green {
+    border-left: 4px solid #4ade80;
+}
+
+.factor-card.red {
+    border-left: 4px solid #f87171;
+}
+
+.factor-card.blue {
+    border-left: 4px solid #60a5fa;
+}

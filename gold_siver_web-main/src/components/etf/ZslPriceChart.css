@@ -1,0 +1,28 @@
+.zsl-price-wrapper{
+  background:#0f1724;
+  color:#d1d5db;
+  border-radius:8px;
+  padding:12px;
+}
+.zsl-price-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+.zsl-price-title{
+  font-weight:600;
+  font-size:18px;
+}
+.zsl-price-stats{
+  text-align:right;
+}
+.zsl-price-stats .price{
+  font-size:20px;
+  font-weight:700;
+  color:#e6eef6;
+}
+.zsl-price-stats .change.up{ color:#16a34a; }
+.zsl-price-stats .change.down{ color:#ef4444; }
+.zsl-price-chart{ height:320px; }
+.zsl-error{ color: #ffb4b4; padding:8px; }

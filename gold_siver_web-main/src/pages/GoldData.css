@@ -1,0 +1,243 @@
+.gold-data-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #141414;
+  color: #ccc;
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.gold-data-container.compact {
+  width: 100%;
+  margin: 0;
+}
+
+.gold-data-header-clean {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+  color: #eab308;
+}
+
+.gold-data-header-clean .title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Tabs */
+.custom-tabs {
+  display: flex;
+  background: #141414;
+  border-bottom: 1px solid #333;
+}
+
+.gold-data-refresh-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gold-data-refresh-controls .last-updated-text {
+  font-size: 10px;
+  color: #666;
+}
+
+.gold-data-refresh-controls .refresh-buttons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.gold-data-refresh-controls .refresh-btn {
+  background: #262626;
+  border: 1px solid #333;
+  color: #888;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gold-data-refresh-controls .refresh-btn:hover {
+  background: #333;
+  color: #ccc;
+}
+
+.gold-data-refresh-controls .refresh-btn.active {
+  background: rgba(234, 179, 8, 0.1);
+  border-color: #eab308;
+  color: #eab308;
+}
+
+.gold-data-refresh-controls .refresh-btn.now {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: white;
+}
+
+.custom-tab {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+  font-size: 12px;
+  color: #888;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.custom-tab:hover {
+  color: #ccc;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.custom-tab.active {
+  color: #eab308;
+  background: rgba(234, 179, 8, 0.05);
+}
+
+.custom-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background-color: #eab308;
+}
+
+/* Timeline */
+.timeline-container {
+  padding: 10px;
+  background: #141414;
+  max-height: 250px; /* Giảm chiều cao xuống */
+  overflow-y: auto;
+}
+
+.timeline-container::-webkit-scrollbar {
+  width: 4px;
+}
+.timeline-container::-webkit-scrollbar-track {
+  background: #141414;
+}
+.timeline-container::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+/* Timeline Groups */
+.timeline-group {
+  margin-bottom: 12px;
+}
+
+.timeline-group-header {
+  font-size: 11px;
+  font-weight: bold;
+  color: #eab308;
+  padding: 2px 10px;
+  margin-bottom: 8px;
+  background-color: rgba(234, 179, 8, 0.08);
+  border-left: 2px solid #eab308;
+  display: inline-block;
+}
+
+/* News Card */
+.news-card {
+  background: #1e1e1e;
+  border: 1px solid #262626;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 8px;
+  transition: border-color 0.2s;
+}
+
+.news-card:hover {
+  border-color: #333;
+}
+
+.news-card-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.news-card-text-side {
+  flex: 1;
+  min-width: 0;
+}
+
+.news-text {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #eab308;
+  margin-bottom: 4px;
+}
+
+.news-text b {
+  color: #fff;
+}
+
+.news-card-image-side {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.news-card-image-side img {
+  width: 60px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid #333;
+}
+
+.news-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  padding-top: 6px;
+  margin-top: 4px;
+  border-top: 1px solid #262626;
+}
+
+.news-source {
+  color: #eab308; /* Màu vàng cho Văn bản gốc */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.news-source:hover {
+  text-decoration: underline;
+}
+
+.news-time {
+  color: #ff4d4f; /* Màu đỏ cho thời gian */
+  font-weight: 600;
+}
+
+.news-time-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #ff4d4f;
+  border-radius: 50%;
+  margin-right: 6px;
+}

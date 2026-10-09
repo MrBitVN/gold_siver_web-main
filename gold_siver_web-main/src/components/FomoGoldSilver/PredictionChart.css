@@ -1,0 +1,311 @@
+/* Prediction Chart Styles */
+
+.prediction-container {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #0f172a 0%, #1a2844 100%);
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 100px);
+    overflow: visible;
+    position: relative;
+}
+
+.prediction-header {
+    margin-bottom: 24px;
+    border-bottom: 2px solid rgba(249, 115, 22, 0.3);
+    padding-bottom: 16px;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.prediction-header:hover { opacity: 0.8; }
+.prediction-header:hover h2 { color: #fb923c; }
+
+.prediction-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin: 0 0 8px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: color 0.2s ease;
+}
+
+.prediction-header .subtitle {
+    font-size: 14px;
+    color: #9ca3af;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Tab Navigation */
+.prediction-tab-navigation {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.prediction-tab-navigation .tab-button {
+    padding: 10px 20px;
+    background: rgba(30, 41, 59, 0.6);
+    border: 2px solid rgba(148, 163, 184, 0.3);
+    border-radius: 8px;
+    color: #cbd5e1;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.prediction-tab-navigation .tab-button.active {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    border-color: #f97316;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.tab-icon { font-size: 16px; }
+
+/* --- MINI NOTIFICATION V2 - FIX NHỎ GỌN & MÀU BẠC --- */
+.mini-noti-v2 {
+    position: fixed;
+    top: 15px;
+    right: 15px; /* Sát lề phải */
+    width: 175px; /* Thu nhỏ tối đa */
+    background: rgba(15, 23, 42, 0.96);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    z-index: 10000;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideInRight 0.3s ease-out;
+    transition: all 0.3s ease;
+    padding: 8px 10px;
+}
+
+/* Thanh màu mỏng bên trái để phân biệt Tăng/Giảm */
+.mini-noti-v2.up { border-left: 3px solid #22c55e; }
+.mini-noti-v2.down { border-left: 3px solid #ef4444; }
+
+.mini-noti-v2.hide {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.noti-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.noti-label {
+    font-size: 12px; /* Chữ nhỏ */
+    font-weight: 700;
+    color: #C0C0C0; /* Màu bạc (Silver) như yêu cầu */
+}
+
+/* Phần trăm bên cạnh tiêu đề */
+.mini-noti-v2.up .noti-label::after { content: ' ↑'; color: #22c55e; font-size: 10px; }
+.mini-noti-v2.down .noti-label::after { content: ' ↓'; color: #ef4444; font-size: 10px; }
+
+.noti-price-line {
+    font-size: 11px;
+    color: #94a3b8; /* Màu chữ phụ xám nhẹ */
+}
+
+.noti-time {
+    font-size: 10px;
+    color: #64748b;
+    font-style: italic;
+}
+
+.close-noti {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    background: transparent;
+    border: none;
+    color: #475569;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-noti:hover { color: #fff; }
+
+/* Nút Test Noti */
+.test-noti-button:hover {
+    background: rgba(99, 102, 241, 0.4) !important;
+    color: #fff !important;
+    transition: all 0.3s ease;
+}
+
+/* Layout biễu đồ và danh sách */
+.prediction-layout { display: flex; flex-direction: column; gap: 20px; }
+
+.prediction-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 10px;
+    border: 1px solid rgba(249, 115, 22, 0.15);
+}
+
+.prediction-chart-wrapper {
+    width: 100%;
+    flex: 1;
+    min-height: 600px;
+    background: rgba(15, 23, 42, 0.4);
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid rgba(249, 115, 22, 0.15);
+    position: relative;
+}
+
+@media (min-width: 769px) {
+    .prediction-layout { flex-direction: row; gap: 20px; }
+    .prediction-left-column { flex: 0 0 33.333%; }
+    .prediction-right-column { flex: 0 0 66.666%; margin-top: -50px; }
+    .prediction-summary { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .prediction-chart-wrapper { min-height: 400px; }
+    .prediction-tab-navigation .tab-button { flex: 1; text-align: center; }
+}
+
+.prediction-list-scroll {
+    max-height: 550px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.prediction-list-scroll::-webkit-scrollbar { width: 4px; }
+.prediction-list-scroll::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.2);
+    border-radius: 10px;
+}
+
+/* Animations */
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Mobile responsive cho Noti nhỏ */
+@media (max-width: 480px) {
+    .mini-noti-v2 {
+        width: 145px;
+        right: 10px;
+        top: 10px;
+    }
+}
+/* --- MINI NOTIFICATION V2 - CẬP NHẬT MÀU THEO TRẠNG THÁI --- */
+.mini-noti-v2 {
+    position: fixed;
+    top: 15px;
+    right: 15px; 
+    width: 175px; 
+    background: rgba(15, 23, 42, 0.96);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    z-index: 10000;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideInRight 0.3s ease-out;
+    transition: all 0.3s ease;
+    padding: 8px 10px;
+}
+
+/* Border trái phân biệt */
+.mini-noti-v2.up { border-left: 3px solid #22c55e; }
+.mini-noti-v2.down { border-left: 3px solid #ef4444; }
+
+.noti-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #C0C0C0; /* Mặc định màu bạc */
+}
+
+/* Đổi màu text phần trăm dựa trên trạng thái up/down */
+.mini-noti-v2.up .price-status {
+    color: #22c55e; /* Xanh lá khi + */
+}
+
+.mini-noti-v2.down .price-status {
+    color: #ef4444; /* Đỏ khi - */
+}
+
+/* Loại bỏ các mũi tên cũ nếu có trong CSS */
+.mini-noti-v2.up .noti-label::after,
+.mini-noti-v2.down .noti-label::after {
+    content: none !important;
+}
+
+.noti-price-line {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+.noti-time {
+    font-size: 10px;
+    color: #64748b;
+    font-style: italic;
+}
+
+.close-noti {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    background: transparent;
+    border: none;
+    color: #475569;
+    font-size: 14px;
+    cursor: pointer;
+}
+/* Đảm bảo toàn bộ diện tích select đều nhận sự kiện click */
+.select-prediction-time {
+    width: 100%;
+    cursor: pointer;
+}
+
+.select-prediction-time option {
+    background: #1e293b;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Hiệu ứng khi hover để người dùng biết có thể click được */
+.history-selector-wrapper:hover .select-prediction-time {
+    border-color: #3b82f6;
+    background: #24334d;
+}
+
+/* Nếu bạn muốn căn chỉnh nút này nhỏ gọn hơn trên mobile */
+@media (max-width: 768px) {
+    .prediction-tab-navigation {
+        gap: 5px;
+    }
+    .select-prediction-time {
+        min-Width: 180px !important;
+        font-size: 12px !important;
+    }
+}

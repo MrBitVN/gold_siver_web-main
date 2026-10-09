@@ -1,0 +1,371 @@
+/* Dark Mode PriceTable Card */
+.price-table-card {
+  background: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  border: 1px solid var(--border-color);
+  /* width: fit-content; */
+}
+
+.map-price-card {
+  width: fit-content;
+}
+
+/* Bảng quốc tế - rộng hơn để hiển thị nhiều cột */
+.price-table-card.international-table .table-wrapper {
+  overflow-x: auto;
+  max-height: 350px;
+}
+
+.price-table-card.international-table .price-table {
+  min-width: 100%;
+  font-size: 0.65rem;
+}
+
+.price-table-card.international-table .price-table th {
+  font-size: 0.55rem;
+  padding: 0.4rem 0.3rem;
+}
+
+.price-table-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(250, 204, 21, 0.2);
+  border-color: var(--accent-yellow);
+}
+
+.table-header {
+  background: var(--card-background);
+  border-bottom: 2px solid var(--accent-yellow);
+  color: var(--text-primary);
+  padding: 0.6rem 0.8rem;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.header-left-info {
+  flex: 1;
+  text-align: left;
+  min-width:  150px;
+}
+
+.vendor-name {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--accent-yellow);
+}
+
+.update-time {
+  margin: 0.2rem 0 0;
+  font-size: 0.6rem;
+  opacity: 0.95;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.trust-badge {
+  margin: 0;
+  padding: 0.3rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 6px;
+  white-space: nowrap;
+  border: 1px solid currentColor;
+  transition: all 0.3s ease;
+}
+
+.table-wrapper {
+  /* Hiển thị tối đa ~5 dòng rồi cho phép cuộn để xem thêm */
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+  max-height: 280px;
+  scroll-behavior: smooth;
+  background: var(--card-background);
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.7rem;
+}
+
+.price-table thead {
+  background: rgba(71, 85, 105, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.price-table th {
+  padding: 0.5rem 0.4rem;
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 0.2px;
+}
+
+.col-product {
+  width: 50%;
+}
+
+.col-price {
+  width: 25%;
+  text-align: right !important;
+}
+
+.col-rate {
+  width: 15%;
+  text-align: right !important;
+}
+
+.price-table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.price-table tbody tr:hover {
+  background-color: rgba(71, 85, 105, 0.3);
+}
+
+/* QUAN TRỌNG: Highlight màu vàng cho dòng có purity = "9999" */
+.price-table tbody tr.highlight-9999 {
+  background-color: var(--accent-yellow-background) !important;
+  font-weight: 600;
+}
+
+.price-table tbody tr.highlight-9999:hover {
+  background-color: rgba(66, 52, 12, 0.8) !important;
+}
+
+.price-table tbody tr.highlight-9999 td {
+  color: var(--accent-yellow) !important;
+}
+
+/* Highlight màu bạc cho dòng có purity = "1KG_BAC_999" */
+.price-table tbody tr.highlight-silver {
+  background-color: rgba(65, 34, 240, 0.15) !important;
+  font-weight: 600;
+}
+
+.price-table tbody tr.highlight-silver:hover {
+  background-color: rgba(192, 192, 192, 0.25) !important;
+}
+
+.price-table tbody tr.highlight-silver td {
+  color: #c0c0c0 !important;
+}
+
+.price-table td {
+  padding: 0.5rem 0.4rem;
+  color: var(--text-primary);
+}
+
+.product-name {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  font-size: 0.6rem;
+}
+
+.gold-badge {
+  background: var(--accent-yellow);
+  color: #000;
+  padding: 0.1rem 0.3rem;
+  border-radius: 6px;
+  font-size: 0.55rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.silver-badge {
+  background: #c0c0c0;
+  color: #000;
+  padding: 0.1rem 0.3rem;
+  border-radius: 6px;
+  font-size: 0.55rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.price-buy,
+.price-sell {
+  text-align: right;
+  font-weight: 600;
+  font-family: "Courier New", monospace;
+  font-size: 0.7rem;
+}
+
+.price-buy {
+  color: #34d399;
+}
+
+.price-sell {
+  color: #f87171;
+}
+
+/* Các cột mới cho Quốc Tế */
+.price-original {
+  text-align: right;
+  font-weight: 600;
+  font-family: "Courier New", monospace;
+  font-size: 0.7rem;
+  color: #fbbf24;
+}
+
+.price-black-market {
+  text-align: right;
+  font-weight: 600;
+  font-family: "Courier New", monospace;
+  font-size: 0.7rem;
+  color: #fb923c;
+}
+
+.rate-black,
+.rate-bank {
+  text-align: right;
+  font-weight: 600;
+  font-family: "Courier New", monospace;
+  font-size: 0.65rem;
+  color: #a78bfa;
+}
+
+.rate-bank {
+  color: #60a5fa;
+}
+
+.red  {
+  color: #f70509 !important;
+}
+
+.country-badge2 {
+  display: inline;
+  background: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.55rem;
+  font-weight: 600;
+  margin-left: 0.3rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  width: fit-content !important;
+}
+
+.table-footer {
+  padding: 0.5rem 0.8rem;
+  background: rgba(71, 85, 105, 0.3);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.table-footer small {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 0.65rem;
+}
+
+.spread-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.3rem;
+}
+
+.spread-item {
+  color: var(--accent-yellow);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.spread-item strong {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+/* Scrollbar tùy chỉnh cho khu vực cuộn bảng - Dark Mode */
+.table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--accent-yellow);
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #fde047;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .price-table-card {
+    font-size: 0.9rem;
+  }
+
+  .vendor-name {
+    font-size: 1.2rem;
+  }
+
+  .price-table th,
+  .price-table td {
+    padding: 0.7rem 0.5rem;
+  }
+
+  .price-table th {
+    font-size: 0.75rem;
+  }
+
+  .product-name {
+    font-size: 0.85rem;
+  }
+
+  .gold-badge {
+    font-size: 0.7rem;
+  }
+}
+
+
+.reload-btn {
+  background: #fde047;
+  border: none;
+  padding: 4px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.reload-btn:hover {
+  background: #cbaa03;
+}

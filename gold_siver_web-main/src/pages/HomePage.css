@@ -1,0 +1,215 @@
+.title-shark-global {
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.title-shark-global:hover {
+  color: white;
+}
+
+.dashboard-item {
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.dashboard-item::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+/* Mặc định Mobile */
+.dashboard-container {
+  /* Đổi từ wrapper -> container */
+  margin-top: 50px;
+  margin-bottom: 70px;
+  min-height: 900px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  /* 1 cột */
+  width: 100%;
+  /* Thêm cái này cho chắc chắn */
+}
+
+.update-alert-box {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c3e50;
+  border: 1px solid #f1c40f;
+  border-radius: 10px;
+  padding: 15px 25px;
+  z-index: 9999;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.4s ease;
+  min-width: 350px;
+}
+
+.update-alert-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.update-text p {
+  margin: 0;
+  color: white;
+  font-size: 14px;
+}
+
+.update-buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.btn-update-now {
+  background: #f1c40f;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-update-later {
+  background: transparent;
+  color: #bdc3c7;
+  border: 1px solid #7f8c8d;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-reload {
+  /* Vị trí cố định góc trái dưới */
+  position: fixed;
+  bottom: 30px;
+  /* Cách đáy màn hình 30px */
+  left: 30px;
+  /* Cách trái màn hình 30px */
+  z-index: 1000;
+  /* Đảm bảo nút luôn nổi lên trên các thành phần khác */
+
+  /* Kích thước và hình dáng */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* Làm tròn nút */
+
+  /* Màu sắc và giao diện */
+  background-color: #C59509;
+  /* Màu xanh chủ đạo */
+  color: white;
+  /* Màu icon */
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  /* Đổ bóng */
+  cursor: pointer;
+
+  /* Căn giữa icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Hiệu ứng mượt mà */
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột vào (Hover) */
+.btn-reload:hover {
+  background-color: #F8CF01;
+  transform: scale(1.1);
+  /* Phóng to nhẹ */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Hiệu ứng khi nhấn (Active) */
+.btn-reload:active {
+  transform: scale(0.95);
+  /* Thu nhỏ nhẹ tạo cảm giác bấm */
+}
+
+/* (Tùy chọn) Class này để thêm hiệu ứng xoay khi đang tải dữ liệu */
+.btn-reload.loading svg {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+
+  to {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+/* Tablet (> 768px): 2 cột */
+@media (min-width: 768px) {
+  .dashboard-container {
+    /* Đổi từ wrapper -> container */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* PC/Laptop (> 1024px): 3 cột */
+@media (min-width: 1024px) {
+  .dashboard-container {
+    /* Đổi từ wrapper -> container */
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.slv-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  /* khoảng cách giữa 3 khối */
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.compare-shanghai {
+  margin-bottom: 100px;
+}
+
+/* Ẩn các section trống nếu các component con không có dữ liệu (return null) */
+.sentiment-grid:empty,
+.etf-grid-container:empty,
+.exchanges-scroll-area:empty,
+.inventory-grid:empty {
+  display: none !important;
+}
+
+.dashboard-section:has(> .section-title-premium:only-child),
+.dashboard-section:has(> .sentiment-grid:empty),
+.dashboard-section:has(> .etf-grid-container:empty),
+.dashboard-section:has(> .exchanges-scroll-area:empty),
+.dashboard-section:has(> .inventory-grid:empty) {
+  display: none !important;
+}

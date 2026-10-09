@@ -1,0 +1,64 @@
+/* Container tổng */
+.price-table-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* giảm khoảng cách giữa 2 bảng */
+    /* flex-wrap: wrap; */
+    /* nếu quá nhỏ thì xuống dòng */
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 800px;
+    /* giới hạn chiều rộng */
+}
+
+/* Bảng */
+.price-table {
+    flex: 1;
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    /* giảm font */
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+/* Header & cell */
+.price-table td {
+    padding: 6px 8px;
+    /* giảm padding */
+    border-bottom: 1px solid #333;
+}
+
+/* Hover row */
+.price-table tr:hover {
+    background: #2d2d2d;
+}
+
+/* Column đầu in đậm */
+.price-table td:first-child {
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .price-table-container {
+        flex-direction: column;
+        gap: 15px;
+        max-width: 100%;
+    }
+
+    .price-table {
+        font-size: 12px;
+        /* nhỏ hơn trên mobile */
+    }
+
+    .price-table td {
+        padding: 5px 8px;
+    }
+}

@@ -1,0 +1,86 @@
+.slv-stats-card {
+    background: radial-gradient(circle at top, #020617, #020617 40%, #000);
+    border-radius: 14px;
+    padding: 18px;
+    color: #e5e7eb;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+/* HEADER */
+.slv-stats-header {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #e2e8f0;
+    text-align: center;
+}
+
+/* GRID CHÍNH */
+.slv-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.slv-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 13px;
+}
+
+.slv-stat span {
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.slv-stat strong {
+    color: #f8fafc;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* RETURNS */
+.slv-returns {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 18px;
+}
+
+.slv-return {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.slv-return span {
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.slv-return.up strong {
+    color: #22c55e;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.slv-return.down strong {
+    color: #ef4444;
+}
+
+.slv-stats-timestamp {
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+.slv-stats-timestamp {
+    font-size: 15px;
+    color: #ffd700;
+}

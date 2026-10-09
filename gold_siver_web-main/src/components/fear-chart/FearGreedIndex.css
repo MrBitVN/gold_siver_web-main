@@ -1,0 +1,346 @@
+/* FearGreedIndex.css - Styling cho Fear & Greed Index Section */
+
+.fear-greed-section {
+  width: 100%;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-yellow);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------
+   PHẦN CONTENT - ĐỔI SANG FLEX NGANG
+----------------------------------------------------- */
+
+.fear-greed-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* --------------------------------------------------
+   PHẦN 1: Overview Section (Gauges)
+----------------------------------------------------- */
+
+.overview-section {
+  width: 40%;
+  background: var(--card-background);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+  /* đổi từ grid sang flex row */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-gauge {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.gauge-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.gauge-date {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
+.comparison-gauges {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+.gauge-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.gauge-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.gauge-item h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.no-data-small {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* --------------------------------------------------
+   PHẦN 2: History Section (Line Chart)
+----------------------------------------------------- */
+
+.history-section {
+  flex: 1;
+  background: var(--card-background);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.history-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.time-filter {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(250, 204, 21, 0.1);
+  border-color: var(--accent-yellow);
+  color: var(--accent-yellow);
+}
+
+.filter-btn.active {
+  background: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  color: #000;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------
+   RESPONSIVE
+----------------------------------------------------- */
+
+/* --------------------------------------------------
+   RESPONSIVE TỐI ƯU HOÁ
+----------------------------------------------------- */
+
+/* Màn hình vừa (Laptop nhỏ / Tablet xoay ngang) */
+@media (max-width: 1200px) {
+  .fear-greed-content {
+    flex-direction: column;
+  }
+
+  .overview-section {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .comparison-gauges {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+/* Tablet dọc / iPad / Điện thoại lớn */
+@media (max-width: 900px) {
+  .overview-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .comparison-gauges {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .gauge-item {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .history-section {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Mobile chuẩn (Android + iPhone) */
+@media (max-width: 768px) {
+  .fear-greed-section {
+    margin-top: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .overview-section,
+  .history-section {
+    padding: 1.2rem;
+  }
+
+  .comparison-gauges {
+    flex-direction: column;
+  }
+
+  .gauge-item {
+    width: 100%;
+  }
+
+  .history-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .time-filter {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.6rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile nhỏ (iPhone SE, Android nhỏ) */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .time-filter {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .overview-section {
+    padding: 1rem;
+  }
+
+  .history-section {
+    padding: 1rem;
+  }
+
+  .gauge-title {
+    font-size: 1rem;
+  }
+
+  .gauge-item h4 {
+    font-size: 0.8rem;
+  }
+}
+.sell-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e74c3c; /* Màu đỏ nổi bật */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  font-weight: bold;
+  animation: fadeInOut 5s ease-in-out;
+  text-align: center;
+}
+
+.buy-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #16a34a; /* Màu xanh cho mua */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  font-weight: bold;
+  animation: fadeInOut 5s ease-in-out;
+  text-align: center;
+}
+
+.sell-notification .notification-close,
+.buy-notification .notification-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -60%); }
+  10% { opacity: 1; transform: translate(-50%, -50%); }
+  90% { opacity: 1; transform: translate(-50%, -50%); }
+  100% { opacity: 0; transform: translate(-50%, -40%); }
+}

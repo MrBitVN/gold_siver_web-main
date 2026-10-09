@@ -1,0 +1,195 @@
+/* =============================================
+   1. LAYOUT CHÍNH & HIỆU ỨNG ẨN HIỆN
+   ============================================= */
+.sparkle-container {
+  position: fixed;
+  top: 50%;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 60px;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s, filter 0.8s;
+}
+
+.gold-pos { left: -15px !important; transform: translateY(-50%); }
+.silver-pos { right: -21px !important; transform: translateY(-50%); }
+
+.hidden-bar { opacity: 0; visibility: hidden; pointer-events: none; filter: blur(10px); }
+.visible-bar { opacity: 1; visibility: visible; filter: blur(0); }
+
+.disintegrate {
+  opacity: 0 !important;
+  filter: blur(15px) contrast(0.5) !important;
+  transform: translateY(-80%) scale(1.2) rotate(5deg) !important;
+  pointer-events: none;
+}
+
+/* =============================================
+   2. THANH RAIL & FILL
+   ============================================= */
+.sparkle-rail {
+  width: 16px;
+  height: 300px;
+  position: relative;
+  border: 1px solid;
+  border-radius: 8px;
+  overflow: hidden; 
+  transition: all 0.3s ease-in-out;
+}
+
+.gold-pos .sparkle-rail {
+  border-color: #FFD700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  background: rgba(255, 215, 0, 0.05);
+}
+.silver-pos .sparkle-rail {
+  border-color: #E0E0E0;
+  box-shadow: 0 0 15px rgba(224, 224, 224, 0.5);
+  background: rgba(224, 224, 224, 0.05);
+}
+
+.sparkle-fill {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  transition: height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.gold-pos .sparkle-fill { background-color: #FFD700; }
+.silver-pos .sparkle-fill { background-color: #E0E0E0; }
+.sparkle-fill.up { bottom: 50%; }
+.sparkle-fill.down { top: 50%; }
+
+/* =============================================
+   3. HIỆU ỨNG PHÁO HOA & PULSE
+   ============================================= */
+.firework-head { position: absolute; left: 0; width: 100%; height: 4px; z-index: 11; background: #fff; }
+.up .firework-head { top: 0; }
+.down .firework-head { bottom: 0; }
+
+.spark-particle { position: absolute; width: 4px; height: 4px; border-radius: 50%; filter: drop-shadow(0 0 5px currentColor); }
+.gold-pos .spark-particle { color: #FFD700; background: #FFD700; }
+.silver-pos .spark-particle { color: #E0E0E0; background: #E0E0E0; }
+
+.p1 { animation: explode-1 0.8s infinite; }
+.p2 { animation: explode-2 0.9s infinite; }
+.p3 { animation: explode-3 0.7s infinite; }
+.p4 { animation: explode-4 1.0s infinite; }
+.p5 { animation: explode-5 0.6s infinite; }
+
+@keyframes explode-1 { 0% { transform: translate(0,0) scale(2); opacity: 1; } 100% { transform: translate(-35px, -50px) scale(0); opacity: 0; } }
+@keyframes explode-2 { 0% { transform: translate(0,0) scale(2); opacity: 1; } 100% { transform: translate(35px, -60px) scale(0); opacity: 0; } }
+@keyframes explode-3 { 0% { transform: translate(0,0) scale(2.5); opacity: 1; } 100% { transform: translate(0, -85px) scale(0); opacity: 0; } }
+@keyframes explode-4 { 0% { transform: translate(0,0) scale(2); opacity: 1; } 100% { transform: translate(-30px, -25px) scale(0); opacity: 0; } }
+@keyframes explode-5 { 0% { transform: translate(0,0) scale(2); opacity: 1; } 100% { transform: translate(30px, -35px) scale(0); opacity: 0; } }
+
+.CRITICAL_UP, .CRITICAL_DOWN { animation: modern-pulse 0.4s infinite alternate; }
+@keyframes modern-pulse {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.6); box-shadow: 0 0 25px currentColor; }
+}
+
+/* =============================================
+   4. NOTIFICATION TRUNG TÂM (STYLE ETF)
+   ============================================= */
+.center-notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10002;
+  background: rgba(0, 0, 0, 0.6); /* Làm mờ nền để nổi bật noti */
+  pointer-events: none;
+}
+
+.etf-notification {
+  pointer-events: auto;
+  width: 320px; /* To hơn mẫu gốc để dễ đọc ở giữa màn hình */
+  background: rgba(17, 24, 39, 0.98);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  /* Quan trọng: Khi hiện thì dùng animation này */
+  animation: popAndShake 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.gold-notification { border: 2px solid #ffd700; }
+.silver-notification { border: 2px solid #c0c0c0; }
+
+@keyframes goldGlow {
+  0%, 100% { box-shadow: 0 5px 15px rgba(0,0,0,0.4), 0 0 10px rgba(255,215,0,0.5); }
+  50% { box-shadow: 0 5px 15px rgba(0,0,0,0.4), 0 0 25px rgba(255,215,0,0.8); }
+}
+.gold-notification { animation: goldGlow 1.5s infinite; }
+
+@keyframes popAndShake {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.notification-inner { position: relative; }
+.notification-close {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.notification-label {
+  font-weight: 800;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.notification-pct {
+  font-weight: 800;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.notification-pct.pos { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+.notification-pct.neg { background: rgba(248, 113, 113, 0.2); color: #f87171; }
+
+/* =============================================
+   5. NÚT TEST & LABELS
+   ============================================= */
+.test-btns-under {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+}
+.test-btns-under button {
+  font-size: 9px;
+  background: #111;
+  color: #555;
+  border: 1px solid #333;
+  padding: 2px 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.test-btns-under button:hover { color: #fff; border-color: #666; }
+
+.pct-label-clean { font-family: monospace; font-size: 14px; font-weight: 900; margin-bottom: 4px; }
+.gold-pos .pct-label-clean, .gold-pos .metal-label-text, .gold-pos .btn-close-clean { transform: translateX(12px); }
+.silver-pos .pct-label-clean, .silver-pos .metal-label-text, .silver-pos .btn-close-clean { transform: translateX(-15px); }
+.metal-label-text { font-size: 11px; font-weight: 900; color: #444; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sparkle-container { transform: scale(0.75); }
+  .etf-notification { width: 85vw; }
+}

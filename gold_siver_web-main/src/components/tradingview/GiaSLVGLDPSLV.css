@@ -1,0 +1,149 @@
+
+/* ===== BUTTON ===== */
+.refresh-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: linear-gradient(135deg, #ffffff, #f3f3f3);
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ===== MODAL ===== */
+.price-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price-modal-container {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.2s ease;
+}
+
+.price-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 👈 ép nút sang phải */
+  gap: 8px;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.price-modal-close-btn {
+  margin-left: auto;            /* 👈 đảm bảo luôn sát bên phải */
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.price-modal-close-btn:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.price-modal-close-btn:active {
+  transform: scale(0.9);
+}
+
+/* ===== PRICE ===== */
+.price-main {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.price-modal-title{
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/*  Responsive */
+@media (max-width: 900px) {
+  .box-container {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .box {
+    flex: 0 0 30%;
+    padding: 5px;
+  }
+
+  .box h2 {
+    font-weight: 900;
+    font-size: 26px;
+    margin-bottom: 2px;
+  }
+
+  .box div {
+    font-size: 16px;
+  }
+
+  .price-main {
+    font-size: 18px;
+  }
+
+  .price-modal-close-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 360px) {
+  .box {
+    flex: 0 0 27%;
+    padding: 3px;
+  }
+
+  .box h2 {
+    font-size: 10px;
+  }
+
+  .box div {
+    font-size: 11px;
+  }
+
+  .price-main {
+    font-size: 14px;
+  }
+}
+

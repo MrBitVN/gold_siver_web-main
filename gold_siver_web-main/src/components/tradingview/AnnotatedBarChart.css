@@ -1,0 +1,113 @@
+.annotated-bar-chart-container {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chart-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.custom-legend {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.legend-label {
+  color: #555;
+}
+
+.chart-wrapper {
+  width: 100%;
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.chart-notes {
+  background-color: #f0f7ff;
+  border-left: 4px solid #1f77b4;
+  padding: 16px;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+.note-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.note-item:last-child {
+  margin-bottom: 0;
+}
+
+.note-label {
+  font-weight: 600;
+  color: #1f77b4;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.note-text {
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .annotated-bar-chart-container {
+    padding: 16px;
+  }
+
+  .chart-title {
+    font-size: 18px;
+  }
+
+  .custom-legend {
+    gap: 16px;
+  }
+
+  .chart-wrapper {
+    padding: 8px;
+  }
+
+  .chart-notes {
+    padding: 12px;
+  }
+
+  .note-item {
+    font-size: 12px;
+  }
+}

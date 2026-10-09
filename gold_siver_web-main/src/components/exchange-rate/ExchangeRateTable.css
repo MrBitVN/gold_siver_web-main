@@ -1,0 +1,182 @@
+/* Exchange Rate Table - Dark Theme */
+.exchange-rate-table-card {
+  background: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exchange-rate-table-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(250, 204, 21, 0.2);
+  border-color: var(--accent-yellow);
+}
+
+.table-header {
+  background: var(--card-background);
+  border-bottom: 2px solid var(--accent-yellow);
+  padding: 0.8rem 1rem;
+}
+
+.table-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent-yellow);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.exchange-rate-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.exchange-rate-table thead {
+  position: sticky;
+  top: 0;
+  background: var(--card-background);
+  z-index: 10;
+}
+
+.exchange-rate-table th {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  color: var(--accent-yellow);
+  border-bottom: 2px solid var(--border-color);
+  background: var(--card-background);
+}
+
+.exchange-rate-table td {
+  padding: 0.7rem 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.exchange-rate-table tbody tr:hover {
+  background: rgba(250, 204, 21, 0.05);
+}
+
+.exchange-rate-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.currency-code-cell {
+  min-width: 120px;
+}
+
+.currency-flag-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.currency-code {
+  font-weight: 700;
+  color: var(--accent-yellow);
+  font-size: 0.9rem;
+}
+
+.currency-name {
+  min-width: 150px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Scope price-buy và price-sell vào exchange-rate-table để tránh conflict với RealTimeTicker */
+.exchange-rate-table .price-buy,
+.exchange-rate-table .price-sell {
+  text-align: right;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 120px;
+}
+
+.price-change {
+  min-width: 120px;
+}
+
+.change-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  justify-content: flex-end;
+}
+
+.change-icon {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.change-icon.up {
+  color: #00c26f;
+}
+
+.change-icon.down {
+  color: #ff4d4d;
+}
+
+.change-icon.neutral {
+  color: var(--text-secondary);
+}
+
+.change-value {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.change-value.up {
+  color: #00c26f;
+}
+
+.change-value.down {
+  color: #ff4d4d;
+}
+
+.change-value.neutral {
+  color: var(--text-secondary);
+}
+
+.change-na {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.exchange-rate-table-empty {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--card-background);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .exchange-rate-table {
+    font-size: 0.75rem;
+  }
+
+  .exchange-rate-table th,
+  .exchange-rate-table td {
+    padding: 0.5rem 0.3rem;
+  }
+
+  .currency-name {
+    min-width: 120px;
+  }
+}
+

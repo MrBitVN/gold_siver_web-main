@@ -1,0 +1,136 @@
+/* ================= MAIN BOX ================= */
+.gc-main-box {
+    background: rgba(15, 23, 42, 0.55);
+    border-radius: 18px;
+    padding: 24px;
+    border: 1px solid rgba(255, 215, 0, 0.15); /* Màu vàng cũ */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* ================= SPLIT LAYOUT ================= */
+.gc-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Đường kẻ dọc ở giữa */
+.gc-split-layout::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(255, 215, 0, 0.25),
+            transparent);
+    transform: translateX(-50%);
+}
+
+.gc-left-panel, .gc-right-panel {
+    min-width: 0;
+    overflow-y: auto;
+}
+
+.gc-toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gc-label {
+    color: #fff3b0; /* Vàng cũ */
+    font-size: 18px;
+    font-weight: 600;
+    margin: 14px 0;
+}
+
+/* ================= PERCENT BAR & ITEMS ================= */
+.gc-percentage-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    width: 100%;
+    padding: 18px;
+    background: rgba(30, 41, 59, 0.45);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 215, 0, 0.25);
+}
+
+.gc-percent-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 12px;
+    background: rgba(15, 23, 42, 0.45);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    transition: all 0.25s ease;
+}
+
+.gc-percent-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 215, 0, 0.6);
+}
+
+.gc-percent-item .label { color: #9ca3af; font-size: 11px; margin-bottom: 5px; text-transform: uppercase; }
+.gc-percent-item .value { font-size: 18px; font-weight: 700; }
+
+.gc-percent-item.up .value { color: #22c55e; } /* Xanh lá cũ */
+.gc-percent-item.down .value { color: #ef4444; } /* Đỏ cũ */
+
+/* ================= BOX THỐNG KÊ (CẬP NHẬT MÀU VÀNG) ================= */
+.gc-update-box, .gc-avg-box {
+    margin-top: 14px;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(45, 45, 10, 0.55), rgba(15, 23, 42, 0.55));
+    border-radius: 14px;
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.gc-label2 { font-size: 15px; font-weight: 500; color: #9ca3af; text-align: center; }
+
+.gc-update-item {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffd700; /* Vàng rực */
+    letter-spacing: 0.3px;
+}
+
+.gc-avg-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffd700; /* Vàng rực */
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 14px rgba(255, 215, 0, 0.45);
+}
+
+.gc-avg-value span { font-size: 16px; font-weight: 500; color: #9ca3af; margin-left: 4px; }
+.gc-avg-sub { font-size: 15px; color: #9ca3af; opacity: 0.9; }
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 1024px) {
+    .gc-split-layout, .gc-split-layout.is-table-mode {
+        grid-template-columns: 1fr !important;
+    }
+    .gc-split-layout::before {
+        display: none;
+    }
+    .gc-percentage-bar { grid-template-columns: repeat(2, 1fr); }
+    .gc-right-panel { overflow-x: auto; }
+}
+
+.gc-table-container { width: 100%; overflow-x: auto; color: #fff; }
+.gc-custom-table { width: 100%; border-collapse: collapse; min-width: 450px; text-align: right; }
+.gc-custom-table th, .gc-custom-table td { padding: 12px; border-bottom: 1px solid #333; }

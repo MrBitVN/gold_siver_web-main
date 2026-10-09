@@ -1,0 +1,566 @@
+.account-registration-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  padding: 20px;
+}
+
+.registration-layout-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.registration-left-section,
+.registration-right-section {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 12px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+
+.wallet-list-title {
+  text-align: center;
+  color: #FFD700;
+  margin: 0 0 30px 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.registration-title {
+  text-align: center;
+  color: #FFD700;
+  margin: 0 0 30px 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.registration-subtitle {
+  text-align: center;
+  color: #666;
+  margin: 0 0 30px 0;
+  font-size: 14px;
+}
+
+.success-message {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-weight: 600;
+  color: yellowgreen !important;
+  font-size: 14px;
+}
+
+.required {
+  color: #e74c3c;
+}
+
+.form-input {
+  padding: 12px 14px;
+  border: 2px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #FFD700 !important;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-input.input-error {
+  border-color: #e74c3c;
+  background-color: #fff5f5;
+}
+
+.input-hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.password-strength-container {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.strength-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  border-radius: 3px;
+}
+
+.strength-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.error-text {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 4px !important;
+}
+
+.checking-status {
+  color: #1976d2;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.check-success {
+  color: #388e3c;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.geocoding-status {
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.geocoding-status.loading {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border: 1px solid #90caf9;
+}
+
+.geocoding-status.success {
+  background-color: #e8f5e9;
+  color: #388e3c;
+  border: 1px solid #81c784;
+}
+
+.geocoding-status.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef5350;
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #FFD700, #FFD700);
+  color: rgb(66, 60, 60);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(122, 148, 255, 0.3);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.terms-text {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: 20px;
+}
+
+.terms-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.terms-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .account-registration-card {
+    padding: 30px 20px;
+  }
+
+  .registration-title {
+    font-size: 24px;
+  }
+
+  .registration-subtitle {
+    font-size: 13px;
+  }
+
+  .form-label {
+    font-size: 13px;
+  }
+
+  .form-input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+/* ================= WALLET SEARCH ================= */
+.wallet-search-section {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 500px;
+}
+
+.wallet-search-title {
+  color: #f0f0f0;
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.wallet-search-btn {
+  width: 100%;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #FFD700, #FFD700);
+  color: rgb(66, 60, 60);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wallet-search-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.wallet-search-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.wallet-dropdown {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin-top: 10px;
+  overflow-y: auto;
+  max-height: 600px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.wallet-dropdown-title {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  padding: 12px 15px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFD700;
+  border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+.wallet-item {
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+.wallet-item:hover {
+  background: #f9f9f9;
+}
+
+.wallet-item:last-child {
+  border-bottom: none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+  .registration-layout-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .registration-layout-wrapper {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .registration-left-section,
+  .registration-right-section {
+    padding: 25px;
+  }
+
+  .registration-title,
+  .wallet-list-title {
+    font-size: 22px;
+  }
+}
+
+.view-wallet-list-btn {
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #FFD700, #FFD700);
+  color: rgb(66, 60, 60);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.view-wallet-list-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.wallet-loading {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.wallet-item:hover {
+  background: linear-gradient(135deg, #FFD700 0%, #FFD700 100%);
+}
+
+.wallet-item-name {
+  font-weight: 600;
+  color: lightgreen;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.wallet-item:hover .wallet-item-name {
+  color: black;
+}
+
+.wallet-item-email {
+  font-size: 12px;
+  color: lightcoral;
+  margin-bottom: 3px;
+}
+
+.wallet-item:hover .wallet-item-email {
+  color: #000000;
+}
+
+.wallet-item-date {
+  font-size: 11px;
+  color: #FFD700;
+}
+
+.wallet-item:hover .wallet-item-date {
+  color: #000000;
+}
+
+.wallet-no-data {
+  color: #999;
+  text-align: center;
+  padding: 20px 15px;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ================= SEARCH BOX ================= */
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+/* Icon */
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #FFD700;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Input */
+.search-input {
+  width: 100%;
+  padding: 12px 14px 12px 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #FFD700;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 0 8px rgba(255, 215, 0, 0.05);
+}
+
+/* Placeholder */
+.search-input::placeholder {
+  color: rgba(255, 215, 0, 0.5);
+}
+
+/* Focus */
+.search-input:focus {
+  outline: none;
+  border-color: #FFD700;
+  box-shadow:
+    0 0 8px rgba(255, 215, 0, 0.6),
+    0 0 16px rgba(255, 215, 0, 0.2);
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+/* ================= DROPDOWN ================= */
+.search-dropdown {
+  max-height: 240px;
+  /* chỉ ~4 item */
+  overflow-y: auto;
+  flex: unset;
+  /* QUAN TRỌNG: bỏ flex */
+  display: block;
+  /* tránh bị kéo dài */
+}
+
+/* Item */
+.wallet-item {
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+/* Hover hiệu ứng vàng */
+.wallet-item:hover {
+  background: linear-gradient(135deg, #FFD700, #ffcc00);
+  transform: translateX(4px);
+}
+
+/* Text khi hover */
+.wallet-item:hover .wallet-item-name,
+.wallet-item:hover .wallet-item-email,
+.wallet-item:hover .wallet-item-date {
+  color: black !important;
+}
+
+/* ================= LOADING ================= */
+.wallet-loading,
+.wallet-no-data {
+  text-align: center;
+  color: #FFD700;
+  padding: 10px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-input-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}

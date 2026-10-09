@@ -1,0 +1,425 @@
+/* ================= ShareChart ================= */
+.sharechart {
+  width: 100%;
+  display: grid;
+  gap: 24px;
+}
+
+/* ---------- Header ---------- */
+.sc-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  justify-content: center;
+}
+
+.sc-header-title7 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: lightblue;
+}
+
+.sc-header-title8 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: lightblue;
+}
+
+.sc-header-title9 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: lightblue;
+}
+
+/* ---------- Section card ---------- */
+.sc-section {
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.sc-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+
+
+/* ---------- Chart wraps ---------- */
+.sc-chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  /* default desktop height */
+}
+
+.sc-chart-wrap--price {
+  height: 360px;
+}
+
+.sc-chart-wrap--volume {
+  height: 260px;
+}
+
+/* ---------- Captions ---------- */
+.sc-caption {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* ---------- Table ---------- */
+.sc-table-wrap {
+  overflow-x: auto;
+}
+
+.sc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #eaeaea;
+}
+
+/* ===== HEADER ===== */
+.sc-table thead th {
+  padding: 10px 8px;
+  text-align: left;
+  font-weight: 600;
+  color: #ffffff;
+  border-bottom: 2px solid #3a3a3a;
+}
+
+/* ===== BODY ===== */
+.sc-table tbody td {
+  padding: 8px 8px;
+  border-bottom: 1px solid #2f2f2f;
+}
+
+/* Hover từng dòng */
+.sc-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Zebra rows */
+.sc-table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+/* ===== ALIGN COLUMNS ===== */
+
+/* Date & Expiration */
+.sc-table th:nth-child(1),
+.sc-table td:nth-child(1),
+.sc-table th:nth-child(2),
+.sc-table td:nth-child(2) {
+  text-align: left;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Strike */
+.sc-table th:nth-child(3),
+.sc-table td:nth-child(3) {
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Type */
+.sc-table th:nth-child(4),
+.sc-table td:nth-child(4) {
+  text-align: center;
+  font-weight: 600;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Size & OI */
+.sc-table th:nth-child(5),
+.sc-table td:nth-child(5) {
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.sc-table th:nth-child(6),
+.sc-table td:nth-child(6) {
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.sc-table td:nth-child(5) {
+  color: #FFD700;
+}
+
+.sc-table td:nth-child(3) {
+  color: lightgreen;
+}
+
+.sc-table td:nth-child(6) {
+  color: lightcoral;
+}
+
+.sc-table td:nth-child(2) {
+  color: #FFD700;
+}
+
+.sc-table td:nth-child(1) {
+  color: #aca4e0;
+}
+
+/* ---------- Mobile tweaks (max-width: 640px) ---------- */
+@media (max-width: 640px) {
+  .sharechart {
+    gap: 16px;
+    padding: 10px; /* Thêm chút đệm cho khung ngoài */
+  }
+
+  /* Header & Titles: Căn giữa và giảm size chữ */
+  .sc-header {
+    flex-direction: column;
+    align-items: center; /* Căn giữa nội dung */
+    justify-content: center;
+    gap: 8px;
+    padding-left: 0 !important; /* Bỏ cái 100px cũ gây lệch */
+    text-align: center;
+  }
+
+  .sc-header-title7, 
+  .sc-header-title8, 
+  .sc-header-title9 {
+    font-size: 1.2rem; /* Nhỏ lại cho mobile */
+    line-height: 1.4;
+  }
+
+  .sc-header-sub {
+    font-size: 14px; /* Giảm size text cập nhật */
+  }
+
+  /* Toolbar & Percentage Bar: Căn giữa */
+  .sc-toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .sc-percentager-bar {
+    width: 100%; /* Chiếm hết chiều rộng mobile */
+    grid-template-columns: repeat(2, 1fr); /* Chia 2 cột cho gọn */
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .sc-percent-item {
+    font-size: 11px; /* Chữ nhỏ lại */
+    padding: 5px;
+  }
+  /* 1. Giảm tối đa padding của Section để biểu đồ có chỗ tràn sang trái */
+  .sc-section {
+    padding: 10px 4px; /* Chỉ để lại 4px đệm hai bên */
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden; /* Đảm bảo biểu đồ không tạo scroll ngang cho cả trang */
+  }
+
+  /* 2. Ép biểu đồ dịch sang trái */
+  .sc-chart-wrap--price, 
+  .sc-chart-wrap--volume {
+    height: 250px;
+    margin-left: -15px; /* Dịch sang trái để bù đắp khoảng trống của trục Y đã ẩn */
+    width: calc(100% + 20px); /* Nới rộng chiều rộng để lấp đầy khoảng trống bên phải */
+  }
+
+  /* 3. Đảm bảo Canvas bên trong chiếm trọn không gian mới */
+  .sc-chart-wrap canvas {
+    width: 100% !important;
+    display: block;
+  }
+
+  /* Section & Charts */
+  .sc-section {
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .sc-section-header {
+    align-items: center; /* Căn giữa tiêu đề bảng */
+    text-align: center;
+  }
+
+  .sc-chart-wrap--price {
+    height: 250px; /* Giảm chiều cao biểu đồ giá */
+  }
+
+  .sc-chart-wrap--volume {
+    height: 180px; /* Giảm chiều cao biểu đồ volume */
+  }
+
+  /* Time Buttons: Làm nút nhỏ lại để không bị tràn hàng quá nhiều */
+  .sc-time-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 3px;
+  }
+
+  /* Table: Giảm font size để xem được nhiều hơn */
+  .sc-table {
+    font-size: 11px;
+  }
+
+  .sc-table th, 
+  .sc-table td {
+    padding: 6px 4px; /* Thu hẹp padding của cell */
+  }
+}
+
+.sc-note {
+  font-size: 12px;
+  color: lightcoral;
+  /* đỏ */
+  display: block;
+  /* nếu muốn xuống dòng */
+  margin-top: 4px;
+  /* khoảng cách so với title */
+}
+
+.sc-timebar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sc-time-btn {
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: rgb(73, 74, 80);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+
+.sc-time-btn.active {
+  background: #FFD700;
+  color: #000;
+  font-weight: 600;
+}
+
+.sc-section-header button {
+  font-size: 15px;
+  background: none;
+  border: 2px solid #ffffff;
+  color: #FFD700;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 10px;
+}
+
+.sc-section-header button:hover {
+  background-color: #FFD700;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sc-toggle-btn {
+  font-size: 15px;
+  background: none;
+  border: 2px solid #ffffff;
+  color: #FFD700;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 10px;
+}
+
+.sc-toggle-btn:hover {
+  background-color: #FFD700;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sc-table-scroll {
+  max-height: 320px;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+/* Sticky header */
+.sc-table thead th {
+  position: sticky;
+  top: 0;
+  background: #0f172a;
+  z-index: 2;
+}
+
+.sc-header-sub {
+  font-size: 17px;
+  color: lightblue;
+  text-align: center;
+}
+
+/* Container chính chứa các chỉ số phần trăm */
+.sc-percentager-bar {
+    display: grid;
+    /* Tự động chia cột: Desktop 3-4 cột, Mobile 1-2 cột tùy màn hình */
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
+    gap: 12px;
+    
+    /* QUAN TRỌNG: Đảm bảo không tràn */
+    width: 100%; 
+    max-width: 100%; /* Không bao giờ vượt quá chiều rộng cha */
+    box-sizing: border-box; /* Tính toán padding vào bên trong chiều rộng */
+    
+    padding: 16px;
+    background: rgba(30, 41, 59, 0.45);
+    border-radius: 14px;
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    margin: 0 auto; /* Căn giữa container */
+}
+
+/* Từng item bên trong */
+.sc-percent-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: rgba(15, 23, 42, 0.5); /* Tạo nền nhẹ cho từng item giống trong ảnh */
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sc-percent-item .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+.sc-percent-item .value {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Mobile Tweaks */
+@media (max-width: 640px) {
+    .sc-header-sub {
+        padding: 0 10px; /* Thêm khoảng trống hai bên để text dài không chạm mép */
+        word-wrap: break-word; /* Ngắt dòng nếu text quá dài */
+        display: flex;
+        flex-direction: column; /* Cho dòng ngày tháng xuống hàng riêng */
+        align-items: center;
+    }
+
+    .sc-percentager-bar {
+        grid-template-columns: 1fr; /* Force 1 cột nếu muốn giống ảnh của bạn */
+        padding: 10px;
+        gap: 8px;
+    }
+}

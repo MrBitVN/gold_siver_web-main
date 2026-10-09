@@ -1,0 +1,34 @@
+/* FearGreedChart.css - Styling cho biểu đồ đường */
+
+.fear-greed-chart {
+  width: 100%;
+  height: 400px;
+  background: var(--card-background);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.chart-empty {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-background);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fear-greed-chart {
+    height: 300px;
+    padding: 1rem;
+  }
+
+  .chart-empty {
+    height: 300px;
+  }
+}

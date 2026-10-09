@@ -1,0 +1,171 @@
+.time-range-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.time-range-selects {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+}
+
+.time-range-loading {
+    padding: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.interval-display {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+.time-range-selector {
+    position: relative;
+    height: 40px;
+    margin-bottom: 0px;
+}
+
+.timeline-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+
+    background-image: repeating-linear-gradient(-45deg,
+            #3c3c3c,
+            #3c3c3c 10px,
+            #2a2a2a 10px,
+            #2a2a2a 20px);
+    overflow: hidden;
+}
+
+.selected-range {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: #FFC107;
+    z-index: 2;
+    cursor: grab;
+    transition: width 0.1s, left 0.1s;
+}
+
+.handle {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 10px;
+    background-color: white;
+    border: 1px solid #e04444;
+    border-radius: 2px;
+    cursor: col-resize;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e04444;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.end-handle {
+    z-index: 4;
+}
+
+.time-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: var(--text-primary);
+    padding: 0 5px;
+}
+
+.time-labels span {
+    text-align: center;
+}
+
+.date-selector {
+    text-align: center;
+    font-size: 1em;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.date-input-style {
+    padding: 8px;
+    margin-left: 10px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.date-input-style:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+}
+
+/* TimeRangeSelector sử dụng style pill-select từ FilterBar.css */
+
+
+.time-slider-container {
+    margin-top: 8px;
+}
+
+.slider-track {
+    position: relative;
+    height: 40px;
+    background: #f0f0f0;
+    border-radius: 6px;
+    overflow: visible;
+    /* Quan trọng để handle không bị cắt */
+}
+
+.slider-highlight {
+    position: absolute;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.35);
+    border-radius: 6px 0 0 6px;
+}
+
+.slider-handle {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Căn giữa */
+    width: 14px;
+    height: 45px;
+    /* cao hơn 1 chút để dễ kéo */
+    background: white;
+    border: 2px solid red;
+    border-radius: 4px;
+    cursor: grab;
+    z-index: 10;
+}
+
+.slider-handle:active {
+    cursor: grabbing;
+}
+
+.time-preview {
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+select{
+    background-color: #334155;
+}

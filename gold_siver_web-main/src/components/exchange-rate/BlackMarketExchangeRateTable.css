@@ -1,0 +1,267 @@
+/* Black Market Exchange Rate Table - Dark Theme Styling */
+/* Tuân thủ pattern từ ExchangeRateTable.css và PriceTable.css */
+
+.black-market-exchange-rate-table-card {
+  background: var(--card-background);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.table-header {
+  margin-bottom: 0.75rem;
+}
+
+.table-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-yellow);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.black-market-exchange-rate-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  table-layout: fixed;
+}
+
+.black-market-exchange-rate-table thead {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.black-market-exchange-rate-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--accent-yellow);
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.black-market-exchange-rate-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.black-market-exchange-rate-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.black-market-exchange-rate-table td {
+  padding: 0.625rem 1rem;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.currency-code-cell {
+  width: 30%;
+}
+
+.currency-flag-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.currency-flag {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.currency-code {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.currency-name {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Scope price-buy và price-sell vào black-market-exchange-rate-table để tránh conflict */
+.black-market-exchange-rate-table .price-buy,
+.black-market-exchange-rate-table .price-sell {
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+}
+
+.black-market-exchange-rate-table .price-buy {
+  color: #22c55e; /* Màu xanh lá giống socket */
+}
+
+.black-market-exchange-rate-table .price-sell {
+  color: #ef4444; /* Màu đỏ giống socket */
+}
+
+/* Animation cho phần thập phân nhảy loạn xạ */
+.animated-price {
+  display: inline-block;
+}
+
+.animated-price::after {
+  content: '';
+  display: inline-block;
+  animation: decimalBlink 0.1s infinite;
+}
+
+@keyframes decimalBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.black-market-exchange-rate-table-empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--card-background);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .black-market-exchange-rate-table-card {
+    padding: 0.875rem;
+  }
+
+  .table-title {
+    font-size: 1.1rem;
+  }
+
+  .black-market-exchange-rate-table {
+    font-size: 0.9rem;
+  }
+
+  .black-market-exchange-rate-table th {
+    font-size: 0.85rem;
+    padding: 0.625rem 0.875rem;
+  }
+
+  .black-market-exchange-rate-table td {
+    padding: 0.5rem 0.875rem;
+  }
+
+  .currency-code,
+  .currency-name {
+    font-size: 0.9rem;
+  }
+
+  .black-market-exchange-rate-table .price-buy,
+  .black-market-exchange-rate-table .price-sell {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .black-market-exchange-rate-table-card {
+    padding: 0.75rem;
+  }
+
+  .table-header {
+    margin-bottom: 0.5rem;
+  }
+
+  .table-title {
+    font-size: 0.95rem;
+  }
+
+  .black-market-exchange-rate-table {
+    font-size: 0.8rem;
+  }
+
+  .black-market-exchange-rate-table th {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.5rem;
+    letter-spacing: 0.3px;
+  }
+
+  .black-market-exchange-rate-table td {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .currency-code-cell {
+    width: 30%;
+  }
+
+  .currency-flag {
+    width: 20px;
+    height: 20px;
+  }
+
+  .currency-code,
+  .currency-name {
+    font-size: 0.8rem;
+  }
+
+  .black-market-exchange-rate-table .price-buy,
+  .black-market-exchange-rate-table .price-sell {
+    font-size: 0.8rem;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 480px) {
+  .black-market-exchange-rate-table-card {
+    padding: 0.5rem;
+  }
+
+  .table-title {
+    font-size: 0.85rem;
+  }
+
+  .black-market-exchange-rate-table {
+    font-size: 0.75rem;
+  }
+
+  .black-market-exchange-rate-table th {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.4rem;
+  }
+
+  .black-market-exchange-rate-table td {
+    padding: 0.4rem 0.4rem;
+  }
+
+  .currency-code-cell {
+    width: 30%;
+  }
+
+  .currency-flag {
+    width: 18px;
+    height: 18px;
+  }
+
+  .currency-code,
+  .currency-name {
+    font-size: 0.75rem;
+  }
+
+  .black-market-exchange-rate-table .price-buy,
+  .black-market-exchange-rate-table .price-sell {
+    font-size: 0.75rem;
+  }
+}
+

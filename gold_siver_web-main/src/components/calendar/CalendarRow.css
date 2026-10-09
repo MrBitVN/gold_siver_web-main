@@ -1,0 +1,106 @@
+/* Calendar Row - Giống 100% screenshot */
+.calendar-row {
+  display: grid;
+  grid-template-columns: 140px 80px 120px 1fr 350px;
+  gap: 1rem;
+  padding: 1rem;
+  background: #ffe451;
+  border: 2px solid #000;
+  border-bottom: none;
+  align-items: center;
+  min-height: 80px;
+}
+
+.calendar-row:last-child {
+  border-bottom: 2px solid #000;
+}
+
+/* Cột 1: Ngày + Thời gian */
+.col-datetime {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.date-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.time-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+/* Cột 2: Quốc gia */
+.col-country {
+  display: flex;
+  justify-content: center;
+}
+
+/* Cột 3: Mức độ */
+.col-importance {
+  display: flex;
+  justify-content: center;
+}
+
+/* Cột 4: Nội dung */
+.col-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.event-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.btn-detail {
+  background: #000;
+  color: #ffe451;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: all 0.2s;
+}
+
+.btn-detail:hover {
+  background: #333;
+  transform: translateX(2px);
+}
+
+/* Cột 5: Thống kê */
+.col-stats {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .calendar-row {
+    grid-template-columns: 120px 70px 100px 1fr 300px;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-row {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .col-stats {
+    justify-content: flex-start;
+  }
+}
+

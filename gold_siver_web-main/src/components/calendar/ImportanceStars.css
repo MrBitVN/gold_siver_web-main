@@ -1,0 +1,15 @@
+.importance-stars {
+  display: flex;
+  gap: 0.15rem;
+  align-items: center;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.star.filled {
+  color: #e63946;
+}
+
